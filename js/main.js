@@ -1,3 +1,20 @@
+/*global $, alert, console*/
+
+$(function() {
+  var myHeader = $('.header');
+  // Header
+  myHeader.height($(window).height());
+  myHeader.width($(window).width());
+
+  $(window).resize(function (){
+    myHeader.height($(window).height());
+    myHeader.width($(window).width());
+  });
+});
+
+$(document).ready(function(){
+    $('ul.tabs').tabs();
+  });
 /* ---- particles.js config ---- */
 particlesJS("particles-js", {
   "particles": {
@@ -167,3 +184,5 @@ window.onload = function() {
   css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
   document.body.appendChild(css);
 };
+
+// Header

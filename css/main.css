@@ -1,4 +1,4 @@
-/* ---- global ---- */
+/* ---- global ----
 body {
   margin: 0;
   font:normal 75% Arial, Helvetica, sans-serif;
@@ -7,8 +7,7 @@ canvas {
   display: block;
   vertical-align: bottom;
 }
-
-/* ---- particles.js container ---- */
+/* ---- particles.js container ---- *
 #particles-js {
   position: absolute;
   width: 100%;
@@ -27,5 +26,5 @@ h1 {
   bottom: 0;
   left: 50px;
   font-size: 4em;
-}
+}*/
 

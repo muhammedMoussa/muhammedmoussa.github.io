@@ -11,11 +11,6 @@ $(function() {
     myHeader.width($(window).width());
   });
 });
-
-$(document).ready(function(){
-    $('ul.tabs').tabs();
-    $('.timeline').Timeline();
-  });
 /* ---- particles.js config ---- */
 particlesJS("particles-js", {
   "particles": {

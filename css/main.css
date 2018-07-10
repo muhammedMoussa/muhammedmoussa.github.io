@@ -9,7 +9,7 @@ canvas {
 }
 blockquote {
   border-left: 5px solid #D9B310
-}    
+}
 /* ---- Header ---- */
 .header {
   position: relative;
@@ -151,19 +151,34 @@ blockquote {
       background: #fff;
 }
 
-/* tumblr button class*/
+/* github button class*/
 .githubBtn{
     background: #2c2e2f;
 }
 
 .githubBtn:before{
       font-family: "FontAwesome";
-      content: "\f09b"; /* add tumblr icon */
+      content: "\f09b"; /* add github icon */
 }
 
 .githubBtn:hover{
       color: #3a5876;
       background: #fff;
+}
+
+/* quora button class*/
+.quoraBtn{
+  background: #b92b27;
+}
+
+.quoraBtn:before{
+    font-family: "FontAwesome";
+    content: "\f2c4"; /* add github icon */
+}
+
+.quoraBtn:hover{
+    color: #3a5876;
+    background: #fff;
 }
 
 /*--------------- Media Querys ----------------*/
@@ -186,7 +201,7 @@ blockquote {
     font-size: 3em;
     white-space: nowrap;
   }
-  
+
   .job-desc {
     display: none;
   }
@@ -203,7 +218,5 @@ blockquote {
     margin: 30px auto !important;
     display: none
   }
-
-  /*About*/
 
 }

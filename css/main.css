@@ -181,6 +181,19 @@ blockquote {
     background: #fff;
 }
 
+.mailToBtn {
+background: #5e5f5f;
+}
+
+.mailToBtn:before{
+  font-family: "FontAwesome";
+  content: "\f0e0"; /* add github icon */
+}
+
+.mailToBtn:hover{
+  color: #5e5f5f;
+  background: #fff;
+}
 /*--------------- Media Querys ----------------*/
 
 @media only screen and (max-width: 600px) {

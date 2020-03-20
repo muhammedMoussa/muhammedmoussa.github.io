@@ -194,6 +194,20 @@ background: #5e5f5f;
   color: #5e5f5f;
   background: #fff;
 }
+
+.stackOverflowBtn {
+  background: #977223;
+}
+
+.stackOverflowBtn:before{
+  font-family: "FontAwesome";
+  content: "\f16c"; /* add github icon */
+}
+
+.stackOverflowBtn:hover{
+  color: #fa6108;
+  background: #fff;
+}
 /*--------------- Media Querys ----------------*/
 
 @media only screen and (max-width: 600px) {

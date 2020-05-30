@@ -1,15 +1,20 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import {Helmet} from 'react-helmet'
+import {useStaticQuery, graphql} from 'gatsby'
 
-
-const Head = (props) => {
-
+const Head = ({ title }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
   return (
-    // @TODO: Dynamic App
-    <Helmet title={`${props.title} | App`} />
+    <Helmet title={`${title} | ${data.site.siteMetadata.title}`} />
   )
-
 }
 
 export default Head

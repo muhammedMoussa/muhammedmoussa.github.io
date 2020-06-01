@@ -1,14 +1,52 @@
-
-import React from 'react'
+import React from "react"
+import { Link, useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import Head from '../components/head'
 
+import blogStyles from './blog.module.scss'
+
 const BlogPage = () => {
+
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulBlogPost(
+        filter: {node_locale: {eq: "en-US"}}   
+        sort: {
+          fields: slug,
+          order: ASC
+        }
+      ) {
+        edges {
+          node {
+            title
+            slug
+            publishedDate(formatString: "MMMM Do, YYYY")
+          }
+        }
+      }
+    }
+  `)
+  
+  // @TODO: HANDLE HERO IMAGE IN CARD
   return (
     <Layout>
       <Head title="Blog" />
-      <p>Rest of blog posts will be up here...</p>
+      <h1 className="mb-2">Latest Posts</h1>
+      <ol className={blogStyles.posts}>
+        {data.allContentfulBlogPost.edges.map((edge, index) => {
+          return (
+            <Link to={`/blog/${edge.node.slug}`}  key={index}>
+              <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white hover:bg-gray-200 hover:border-gray-300 focus:outline-none focus:bg-white focus:shadow-outline focus:border-gray-300"> 
+                <div className="px-6 py-4">
+                  <div className="font-bold text-xl mb-2">{edge.node.title}</div>
+                  <p className="text-gray-600">{edge.node.publishedDate}</p>
+                </div> 
+              </div>
+            </Link>
+          )
+        })}
+      </ol>
     </Layout>
   )
 }

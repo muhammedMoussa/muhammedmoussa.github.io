@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Muhammed Moussa',
-    author: 'Muhammed Moussa'
+    author: 'Muhammed Moussa',
+    version: '2.0.0'
   },
   plugins: [
     'gatsby-plugin-sass',

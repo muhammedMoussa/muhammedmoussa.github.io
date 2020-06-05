@@ -8,7 +8,7 @@ import '../styles/index.scss'
 const Layout = (props) => {
   return (
     <div 
-      className="min-h-screen max-w-3xl p-5 mx-auto flex flex-col"
+      className="min-h-screen max-w-4xl p-5 mx-auto flex flex-col"
       style={{
         backgroundColor: 'var(--bg)',
         color: 'var(--textNormal)'

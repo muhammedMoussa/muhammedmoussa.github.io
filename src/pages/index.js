@@ -28,19 +28,19 @@ const IndexPage = () => {
   return (
     <Layout>
       <Head title="Home" />
-      <h1 className="mt-4 text-3xl">{data.site.siteMetadata.intro}</h1>
-      <div className="my-2 antialiased sm:subpixel-antialiased md:antialiased lg:subpixel-antialiased xl:antialiased">
-        <p className="mb-2">{data.site.siteMetadata.quote}</p>
-        <p>{data.site.siteMetadata.summary}</p>
+      <h1 className="font-bold mt-4 text-3xl">{data.site.siteMetadata.intro}</h1>
+      <div className="tracking-wide leading-loose my-2 antialiased sm:subpixel-antialiased md:antialiased lg:subpixel-antialiased xl:antialiased">
+        <p className="font-semibold mb-2">{data.site.siteMetadata.quote}</p>
+        <p className="mb-2 font-semibold">{data.site.siteMetadata.summary}</p>
       </div>
 
-      <h2 className="mt-8 display-block">Find Me</h2>
+      <h2 className="mt-10 display-block">Find Me</h2>
       <div className="inline-flex mt-2">
       {data.site.siteMetadata.social.map((platform, index) => {
         return (
           <a             
             key={index} 
-            className={platform.icon + ' m-1 text-xl'} 
+            className={platform.icon + ' mr-2 p-2 text-2xl hover:text-blue-500 transition ease-in-out duration-700'} 
             href={platform.url} 
             target="_blank"
           ></a>
@@ -50,7 +50,7 @@ const IndexPage = () => {
 
     <h2 className="mt-8 mb-1">Stack Overflow Flair</h2>
     <StackOverflowFlair />
-    <p className="mt-8">Need a service or want to work with me? 
+    <p className="mt-12">Need a service or want to work with me? 
       <a className="cursor-pointer text-blue-600" href="mailto:muhammedmoussa@hotmail.com"> reach out.</a>
     </p>
 

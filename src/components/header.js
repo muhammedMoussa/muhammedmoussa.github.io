@@ -1,26 +1,12 @@
 import React from 'react'
-import {Link, graphql, useStaticQuery} from 'gatsby'
+import {Link} from 'gatsby'
+import {ThemeToggler} from 'gatsby-plugin-dark-mode'
 
 import headerStyles from './header.module.scss'
 
 const Header = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <header className={headerStyles.header}>
-      <h1>
-        <Link to="/" className={headerStyles.title}>
-          {data.site.siteMetadata.title}
-        </Link>
-      </h1>
       <nav>
         <ul className={headerStyles.navList}>
           <li>
@@ -34,6 +20,24 @@ const Header = () => {
           </li>
           <li>
             <Link to="/contact" className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem}>Contact</Link>
+          </li>
+          <li className="toggle-input">
+            <ThemeToggler>
+            {({ theme, toggleTheme }) => (
+              <label className="cursor-pointer ">
+                <i 
+                  className={theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun'}
+                  onClick={() => toggleTheme(theme === 'dark' ? 'dark' : 'light')} 
+                ></i>
+                <input
+                  type="checkbox"
+                  onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+                  checked={theme === 'dark'}
+                  
+                /> {' '}
+              </label>
+            )}
+          </ThemeToggler>
           </li>
         </ul>
       </nav>

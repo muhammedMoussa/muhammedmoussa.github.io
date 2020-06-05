@@ -37,7 +37,7 @@ const BlogPage = () => {
         {data.allContentfulBlogPost.edges.map((edge, index) => {
           return (
             <Link to={`/blog/${edge.node.slug}`}  key={index}>
-              <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white hover:bg-gray-200 hover:border-gray-300 focus:outline-none focus:bg-white focus:shadow-outline focus:border-gray-300"> 
+              <div className="max-w-sm my-2 rounded overflow-hidden shadow-lg focus:outline-none focus:shadow-outline"> 
                 <div className="px-6 py-4">
                   <div className="font-bold text-xl mb-2">{edge.node.title}</div>
                   <p className="text-gray-600">{edge.node.publishedDate}</p>

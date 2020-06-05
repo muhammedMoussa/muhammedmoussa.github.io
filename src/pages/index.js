@@ -30,8 +30,8 @@ const IndexPage = () => {
       <Head title="Home" />
       <h1 className="font-bold mt-4 text-3xl">{data.site.siteMetadata.intro}</h1>
       <div className="tracking-wide leading-loose my-2 antialiased sm:subpixel-antialiased md:antialiased lg:subpixel-antialiased xl:antialiased">
-        <p className="font-semibold mb-2">{data.site.siteMetadata.quote}</p>
-        <p className="mb-2 font-semibold">{data.site.siteMetadata.summary}</p>
+        <p className="font-medium mb-2">{data.site.siteMetadata.quote}</p>
+        <p className="mb-2 font-medium">{data.site.siteMetadata.summary}</p>
       </div>
 
       <h2 className="mt-10 display-block">Find Me</h2>

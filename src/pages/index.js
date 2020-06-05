@@ -35,7 +35,7 @@ const IndexPage = () => {
       </div>
 
       <h2 className="mt-10 display-block">Find Me</h2>
-      <div className="inline-flex mt-2">
+      <div className="inline-inherit mt-2">
       {data.site.siteMetadata.social.map((platform, index) => {
         return (
           <a             
@@ -51,7 +51,7 @@ const IndexPage = () => {
     <h2 className="mt-8 mb-1">Stack Overflow Flair</h2>
     <StackOverflowFlair />
     <p className="mt-12">Need a service or want to work with me? 
-      <a className="cursor-pointer text-blue-600" href="mailto:muhammedmoussa@hotmail.com"> reach out.</a>
+      <a className="cursor-pointer text-blue-600" href="mailto:muhammedmoussa@hotmail.com"> reach out</a>.
     </p>
 
     </Layout>

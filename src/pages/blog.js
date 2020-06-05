@@ -32,7 +32,7 @@ const BlogPage = () => {
   return (
     <Layout>
       <Head title="Blog" />
-      <h1 className="mb-2">Latest Posts</h1>
+      <h1 className="font-bold mt-4 text-3xl">Latest Posts</h1>
       <ol className={blogStyles.posts}>
         {data.allContentfulBlogPost.edges.map((edge, index) => {
           return (

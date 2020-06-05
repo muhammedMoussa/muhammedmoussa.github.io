@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: 'Muhammed Moussa',
     author: 'Muhammed Moussa',
-    intro: 'Hello, I\'m Muhammed. Frontend Developer.',
-    quote: 'I\'m not a great developer; I\'m just a good developer with great habits; clean, solid, and tested code.',
+    intro: 'Hello, I\'m Muhammed. Frontend Engineer.',
+    quote: 'I\'m not a great programmer; I\'m just a good programmer with great habits; clean, solid, and tested code.',
     summary: 'A thorough few years of expertise worked in various industries like Saas,\ Booking, Event Planning, ERP, and Social platforms. with a passion for delivering high-quality software throw requirements to end-user. Regardless of the technology/framework limitation and the platform (Web, Mobile, or PWA).',
     social: [
       { icon: 'fab fa-twitter', url: 'http://twitter.com/muhammedMoussa'},

@@ -2,7 +2,7 @@ import React from 'react'
 
 const StackOverflowFlair = () => {
   return (
-    <div className="my-4">
+    <div>
         <a href="https://stackoverflow.com/users/6512565/muhammed-moussa" target="blank">
         <img 
             src="https://stackexchange.com/users/flair/8703665.png?theme=dark" 

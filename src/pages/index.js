@@ -1,16 +1,59 @@
 import React from 'react'
-import {Link} from 'gatsby'
+import {graphql, useStaticQuery} from 'gatsby'
 
 import Layout from '../components/layout'
 import Head from '../components/head'
+import StackOverflowFlair from '../components/stackOverflowFlair'
+
+// @TODO: REFACTOR SOCIAL ICONS TO BE COMPONENT
+// @TODO: REPLACE GATSBY FAVICON
 
 const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          quote,
+          summary,
+          intro,
+          social {
+            url,
+            icon
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <Layout>
       <Head title="Home" />
-      <h1>Hello, </h1>
-      <h2> I'm Muhammed Moussa, a frontend engineer</h2>
-      <p>Need a service? <Link className="text-indigo-500" to="/contact">Contact me.</Link></p>
+      <h1 className="mt-4 text-3xl">{data.site.siteMetadata.intro}</h1>
+      <div className="my-2 antialiased sm:subpixel-antialiased md:antialiased lg:subpixel-antialiased xl:antialiased">
+        <p className="mb-2">{data.site.siteMetadata.quote}</p>
+        <p>{data.site.siteMetadata.summary}</p>
+      </div>
+
+      <h2 className="mt-8 display-block">Find Me</h2>
+      <div className="inline-flex mt-2">
+      {data.site.siteMetadata.social.map((platform, index) => {
+        return (
+          <a             
+            key={index} 
+            className={platform.icon + ' m-1 text-xl'} 
+            href={platform.url} 
+            target="_blank"
+          ></a>
+        )
+      })}
+    </div>
+
+    <h2 className="mt-8 mb-1">Stack Overflow Flair</h2>
+    <StackOverflowFlair />
+    <p className="mt-8">Need a service or want to work with me? 
+      <a className="cursor-pointer text-blue-600" href="mailto:muhammedmoussa@hotmail.com"> reach out.</a>
+    </p>
+
     </Layout>
   )
 }

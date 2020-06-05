@@ -1,7 +1,7 @@
 // @TODO: REMOVE AND USE tailwindcss utils
 .header {
-  padding: 1rem 0 3rem;
   position: relative;
+  margin: 10px 0;
 }
 
 .title {
@@ -28,11 +28,5 @@
 }
 
 .active-nav-item {
-  color: #feb2b2;
-}
-
-.header ui li:last-child {
-  position: absolute;
-  right: 0;
-  background: red !important;
+  color: #3182ce;
 }

@@ -4,6 +4,8 @@ import {ThemeToggler} from 'gatsby-plugin-dark-mode'
 
 import headerStyles from './header.module.scss'
 
+// @TODO: REMOVE UNSED PAGES...
+
 const Header = () => {
   return (
     <header className={headerStyles.header}>
@@ -13,18 +15,12 @@ const Header = () => {
             <Link to="/" className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem}>Home</Link>
           </li>
           <li>
-            <Link to="/about" className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem}>About</Link>
-          </li>
-          <li>
             <Link to="/blog" className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem}>Blog</Link>
-          </li>
-          <li>
-            <Link to="/contact" className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem}>Contact</Link>
           </li>
           <li className="toggle-input">
             <ThemeToggler>
             {({ theme, toggleTheme }) => (
-              <label className="cursor-pointer ">
+              <label className="cursor-pointer">
                 <i 
                   className={theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun'}
                   onClick={() => toggleTheme(theme === 'dark' ? 'dark' : 'light')} 

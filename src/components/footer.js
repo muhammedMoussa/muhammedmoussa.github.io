@@ -6,7 +6,8 @@ const Footer = () => {
     query {
       site {
         siteMetadata {
-          author
+          author,
+          version
         }
       }
     }
@@ -14,7 +15,7 @@ const Footer = () => {
 
   return (
     <footer className="mt-5">
-      <p>{data.site.siteMetadata.author} @2020</p>
+      <p>{data.site.siteMetadata.author} @2020, v: {data.site.siteMetadata.version}</p>
     </footer>
   )
 }

@@ -1,0 +1,52 @@
+@import url("https://unpkg.com/tailwindcss@1.4.6/dist/tailwind.min.css");
+@import url("https://use.fontawesome.com/releases/v5.7.2/css/all.css");
+
+// @TODO: HANDEL DARK MODE...
+// https://www.gatsbyjs.org/packages/gatsby-plugin-dark-mode/?=dark
+
+// $primary: #004990;
+// $secondary: #52575c;
+// $background: #fff;
+// $text: #000;
+
+// :root{ 
+//   --data-color-primary: #{$primary};
+//   --data-color-secondary: #{$secondary};
+//   --data-color-background: #{$background};
+//   --data-color-text: #{$text};
+// }
+
+// body {
+//     background-color: $background;
+//     color: set-notification-text-color($text);
+//     -webkit-font-smoothing: antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+// }
+
+body {
+  --bg: white;
+  --textNormal: #222;
+  --textTitle: #222;
+  --textLink: blue;
+  --hr: hsla(0, 0%, 0%, 0.2);
+
+  background-color: var(--bg);
+}
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+  --bg: #1a202c;
+  --textNormal: rgba(255, 255, 255, 0.88);
+  --textTitle: white;
+  --textLink: yellow;
+  --hr: hsla(0, 0%, 100%, 0.2);
+}
+.toggle-input {
+  position: absolute;
+  right: 0;
+}
+
+.toggle-input  input {
+  width: .1px !important;
+  height: .1px !important;
+}

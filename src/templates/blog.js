@@ -6,17 +6,18 @@ import {Disqus, CommentCount} from 'gatsby-plugin-disqus'
 import Layout from '../components/layout'
 import Head from '../components/head'
 
-export const query = graphql `
-  query($slug: String!) {
-    contentfulBlogPost(slug: { eq: $slug }) {
-      title
-      publishedDate(formatString: "MMMM Do, YYYY")
-      body {
-        json
-      }
-    }
-  }
-`
+// @TODO: USE WHEN ADD POST
+// export const query = graphql `
+//   query($slug: String!) {
+//     contentfulBlogPost(slug: { eq: $slug }) {
+//       title
+//       publishedDate(formatString: "MMMM Do, YYYY")
+//       body {
+//         json
+//       }
+//     }
+//   }
+// `
 
 
 const BlogTemplate = (props) => {

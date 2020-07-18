@@ -19,7 +19,7 @@ module.exports = {
       { icon: 'fab fa-gitlab', url: 'https://gitlab.com/muhammedMoussa'},
       { icon: 'fab fa-bitbucket', url: 'https://bitbucket.org/muhammedmoussa/'}
     ],
-    version: '2.0.0'
+    version: '2.0.2'
   },
   plugins: [
     'gatsby-plugin-sass',
@@ -57,7 +57,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: process.env.SHORTNAME
+        shortname: process.env.SHORTNAME      
       }
     }
   ]

@@ -7,26 +7,25 @@ import Head from '../components/head'
 import blogStyles from './blog.module.scss'
 
 const BlogPage = () => {
-  // @TODO: USE WHEN ADD POST
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     allContentfulBlogPost(
-  //       filter: {node_locale: {eq: "en-US"}}   
-  //       sort: {
-  //         fields: slug,
-  //         order: ASC
-  //       }
-  //     ) {
-  //       edges {
-  //         node {
-  //           title
-  //           slug
-  //           publishedDate(formatString: "MMMM Do, YYYY")
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulBlogPost(
+        filter: {node_locale: {eq: "en-US"}}   
+        sort: {
+          fields: slug,
+          order: ASC
+        }
+      ) {
+        edges {
+          node {
+            title
+            slug
+            publishedDate(formatString: "MMMM Do, YYYY")
+          }
+        }
+      }
+    }
+  `)
   
   // @TODO: HANDLE HERO IMAGE IN CARD
   return (
@@ -35,7 +34,7 @@ const BlogPage = () => {
       <h1 className="font-bold mt-4 text-3xl">Latest Posts</h1>
       <ol className={blogStyles.posts}>
         <p>There are no posts yet!</p>
-        {/*data?.allContentfulBlogPost?.edges.map((edge, index) => {
+        {data?.allContentfulBlogPost?.edges.map((edge, index) => {
           return (
             <Link to={`/blog/${edge.node.slug}`}  key={index}>
               <div className="max-w-sm my-2 rounded overflow-hidden shadow-lg focus:outline-none focus:shadow-outline"> 
@@ -46,7 +45,7 @@ const BlogPage = () => {
               </div>
             </Link>
           )
-        })*/}
+        })}
       </ol>
     </Layout>
   )

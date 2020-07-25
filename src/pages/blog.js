@@ -33,7 +33,6 @@ const BlogPage = () => {
       <Head title="Blog" />
       <h1 className="font-bold mt-4 text-3xl">Latest Posts</h1>
       <ol className={blogStyles.posts}>
-        <p>There are no posts yet!</p>
         {data?.allContentfulBlogPost?.edges.map((edge, index) => {
           return (
             <Link to={`/blog/${edge.node.slug}`}  key={index}>

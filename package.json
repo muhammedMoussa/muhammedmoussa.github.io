@@ -2,7 +2,7 @@
   "name": "muhammedmoussa.github.io",
   "private": false,
   "description": "A Personal Website and Blog.",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",

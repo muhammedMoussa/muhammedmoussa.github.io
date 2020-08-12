@@ -19,7 +19,7 @@ module.exports = {
       { icon: 'fab fa-gitlab', url: 'https://gitlab.com/muhammedMoussa'},
       { icon: 'fab fa-bitbucket', url: 'https://bitbucket.org/muhammedmoussa/'}
     ],
-    version: '2.0.3'
+    version: '2.0.4'
   }, 
   plugins: [
     'gatsby-plugin-sass',

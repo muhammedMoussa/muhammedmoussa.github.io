@@ -11,6 +11,7 @@ module.exports = {
       { icon: 'fab fa-twitter', url: 'http://twitter.com/muhammedMoussa'},
       { icon: 'fab fa-github', url: 'http://github.com/muhammedMoussa'},
       { icon: 'fab fa-stack-overflow', url: 'https://stackoverflow.com/story/muhammedmoussa'},
+      { icon: 'fab fa-xing-square', url: 'https://www.xing.com/profile/Muhammed_Moussa/cv'},
       { icon: 'fab fa-quora', url: 'https://www.quora.com/profile/Muhammed-Moussa-2'},
       { icon: 'fab fa-codepen', url: 'https://codepen.io/muhammedMoussa'},
       { icon: 'fab fa-dev', url: 'https://dev.to/muhammedmoussa'},

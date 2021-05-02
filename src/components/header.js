@@ -17,6 +17,9 @@ const Header = () => {
           <li>
             <Link to="/blog" className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem}>Blog</Link>
           </li>
+          <li>
+            <Link to="/gallery" className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem}>Gallery</Link>
+          </li>
           <li className="toggle-input">
             <ThemeToggler>
             {({ theme, toggleTheme }) => (

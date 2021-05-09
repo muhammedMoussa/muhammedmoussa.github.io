@@ -1,27 +1,39 @@
-const path = require('path')
+const path = require("path")
 
-module.exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-  const blogTemplate = path.resolve('./src/templates/blog.js')
-  const res = await graphql(`
-    query {
-      allContentfulBlogPost {
-        edges {
-          node {
-            slug
-          }
+exports.createPages = async ({ graphql, actions, reporter }) => {
+    const { createPage } = actions
+
+    const result = await graphql
+    (`
+        query {
+            allMdx {
+                edges {
+                    node {
+                        id
+                        slug
+                    }
+                }
+            }
         }
-      }
-    }
-  `)
+    `)
 
-  res.data.allContentfulBlogPost.edges.forEach((edge) => {
-    createPage({
-      component: blogTemplate,
-      path: `/blog/${edge.node.slug}`,
-      context: {
-        slug: edge.node.slug
-      }
+    if (result.errors) {
+        reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
+    }
+
+    // Create blog post pages.
+    const posts = result.data.allMdx.edges
+
+    posts.forEach(({ node }, index) => {
+        debugger
+        console.log('ddddddddddddddddd',node)
+        if(node.slug) {
+            createPage({
+                path: `blog/${node.slug}`,
+                component: path.resolve(`./src/templates/post-page-template.js`),
+                context: { id: node.id },
+            })
+        }
+
     })
-  })
 }

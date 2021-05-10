@@ -1,0 +1,119 @@
+---
+title: Control angular forms in just functions 🔥
+date: 2020-06-17
+published: true
+---
+Forms are an important concept to be covered and controlled in the client-side development... in the previous article, I talked about forms in angular and how to manage them easily with `Rxjs`.
+
+{% post https://dev.to/muhammedmoussa/hack-angular-forms-with-rxjs-4he7 %}
+
+# Idea:
+- keep it simple is a concept, we will use only angular two-way data binding connected with only functions and component props in a functional way. no more template-driven, reactive forms or even observable forms :D 
+
+<mark>Note:</mark> this pattern can be useful in small static forms. 
+
+we will be going with pseudocode for HTML and component coverage and the full code with demo will be included. let's start!
+
+![GIF](https://media.giphy.com/media/l1J9xV815LOOTUju0/giphy.gif)
+
+# Component Goal:
+- let's assume that we have a user form component as pice of our app and we planned to reuse it so it will be declarative enough and prevent its noise from parent components will render. here are some props and functions our component will need.
+
+# Component Ui:
+- the form is simple to keep the view part only focusing on UI stuff and CSS styling, with just inputs and a piece of banana in the box `[()]`, with buttons eventually binding into the component class.
+
+```html
+<div>
+  <input [(ngModel)]="name" type="text">
+  <input [(ngModel)]="active" type="checkbox">
+  <button (click)="onSubmit()">Save</button>
+  <button (click)="onReset()">Reset</button>
+</div>
+```
+
+that's all that we need from our component view. no more logic noise clear or directives.
+
+# Functional part in component:
+- the place where the component view will dance, we need two main things only. `variables` or `props` which will act as form controls, and functions that are will handle form actions like `submit` and `reset`.
+
+
+
+```typescript
+export class UserFormComponent {
+  // controls 
+  name = ''
+  active = false
+
+  onSubmit() {
+    // collecting component data before submit. 
+    const {name, age} = this
+    const userData = {name, age}
+
+    console.log(userData)
+  }
+
+  onReset() { 
+    // component is clear again.
+    this.name = '';
+    this.active = false
+  }
+}
+```
+
+and that's it we have a simple clean component that will act as a solid piece from our greater app!
+
+![GIF](https://media.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif)
+
+# Bonus:
+- since we are building a solid re-usable component so we have to consider its communication channel with the other components. Yah. it needs to pass its data into the world and we can deal with that inside angular by event emitting via `@Output()`. actually, we almost need the form data when submitting the event but in some cases, we need to emit also reset events to the parent component for any reset stuff related to other components. let's implement both.
+
+```typescript
+export class UserFormComponent {
+  @Output() submit = new EventEmitter<object>()
+  @Output() reset = new EventEmitter<any>()
+
+  onSubmit() {
+    // collecting component data before submit. 
+    const {name, age} = this
+    const userData = {name, age}
+
+    console.log(userData)
+    this.submit.emit(userData)
+  }
+
+  onReset() {
+    this.reset.emit()
+  }
+}
+```
+- another pro tip to validate our form before submit and again form logic will be inside it, not another place so let's validate before traveling to the parent component. in just function no more built-in or third-party validators.
+
+```typescript
+export class UserFormComponent {
+  onSubmit() {
+    // validating component data before submit.
+    if(!this.isValid()) { return }
+
+    // ... submit code
+  }
+
+  private isValid(): boolean {
+    // just required name and active. you can go with your validation logic and add another else if blocks.
+    const {name, active} = this
+    if(name && active) {
+      return true
+    } else {
+      return false
+    }
+  }
+}
+```
+
+#Concolusion 🖐️#
+we discussed forms management tips for angular development by using built-in frameworks  Data binding and event emitters. in a functional way, **BUT** this approach not Exclusive at angular think about it functional programming is heavily welcomed in javascript frameworks and the second part is a data binding is a behavior that another framework can offer like `VueJs` in `v-model` directive. and `React` in `useState()` hook. so this pattern may be useful at any js framework not only angular.
+
+thought sharing is welcomed since all of that post is just a personal point of view through daily experience.
+
+[Github Repo](https://github.com/muhammedMoussa/angular-forms-tips)
+[Live Demo](https://angular-forms-tips.netlify.app/)
+[Find Me on Twitter](https://twitter.com/muhammedmoussa)

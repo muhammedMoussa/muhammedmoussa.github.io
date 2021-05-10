@@ -1,0 +1,193 @@
+---
+title: "Hack Angular Forms With Rxjs 🔥"
+date: 2020-05-17
+published: true
+---
+
+# Why Forms?
+
+Forms are heavily used behavior inside your application you have to keep its values and validation rules under your custom control, in a simple easy way as you can. today we are going to talk about one tip for controlling forms in angular development. maybe change your life. 😵
+
+![GIF](https://media.giphy.com/media/vykQomUCNUJg0NqpXx/giphy.gif)
+
+# Angular Forms
+If you are like me working daily with angular at least right now, you probably used or heard about Reactive Forms and Template Driven Forms and the fighting about which one I have to use?
+
+# What the Tips!
+
+- before angular, you maybe were using HTML with JQuery forms, or redux forms if you are a React guy and so on. 
+- since angular coming with Rxjs, so the tip is ***Observables*** not Reactive or TD Forms, yeah we will discuss how to manage the forms by only observables and data binding nothing more.
+
+![GIF](https://media.giphy.com/media/co5nmPivPa42vv6IVm/giphy.gif)
+
+# Observable Based Form
+
+the simple idea is we have an observable at a form at the left-hand side and an observable at the right-hand side, and the process running on two data-binding, that's it!
+
+![GIF](https://media.giphy.com/media/tu54GM19sqJOw/giphy.gif)
+
+No worries, we will walk through an example, let's start!
+you know if you will use the reactive form approach you will need some configs at module level and dependencies at the component level, as an example:
+
+`app.module.ts`
+```typescript
+import {ReactiveFormsModule} from '@angular/forms';
+
+@NgModule({
+  declarations: [...],
+  imports: [ReactiveFormsModule],
+  bootstrap: [AppComponent]
+})
+```
+
+`form.component.ts`
+
+```typescript
+import {FormGroup, FormBuilder} from '@angular/forms';
+
+export class UserFormComponent {
+  userForm: FormGroup;
+
+  // maybe OnInit instead, but it's okay we will never use 😋
+  constructor(private fb: FormBuilder) {
+    this.userForm = fb.group({
+      // controls config
+    })
+  }
+
+  updateform = () => {
+     this.userForm.patchValue({
+       // new data config
+     });
+  }
+
+  resetForm = () => {
+    this.userForm.reset();
+  }
+
+  getFormValues = (): object { 
+    return this.userForm.value;
+  }
+}
+```
+
+and finally `form.componnet.html`
+
+```html
+<form [formGroup]="userForm">
+  <input formControlName="...">
+  <input formControlName="...">
+<form>
+```
+
+in the above example as you see modules, dependencies, and configs for the form, in addition to the extra utilities for the update, reset and get value stuff, get here can bu also submit which is at the end the place you get the data and play with it.
+that's about the reactive forms approach as a reminder.
+
+Another way can do it with TD Forms since I didn't like it so we will never mention it's an example!
+
+ref: [Angular TD Forms](https://angular.io/guide/forms#building-a-template-driven-form).
+
+#Now lets RX it!#
+
+![GIF](https://media.giphy.com/media/l3vRazsPc3L1RqAs8/giphy.gif)
+
+all that we need is a service as a source of truth for our approach, and the components can work with, yeah **COMPONENTS** not only form component that's the power of observables and data streaming. 🚀 
+to be honest, you can do you can get form data at any parent component by template reference also, but let us go with pure state management at Rxjs. so our service something like this:
+
+Note: you can find a complete example at Github.
+
+`state.service.ts`
+
+```typescript
+import {BehaviorSubject, Observable} from 'rxjs';
+
+export class StateService {
+  private userData$ = new BehaviorSubject<IUser>(new User());
+  
+  public setUserData = (userData: IUser) => this.userData$.next(userData);
+  public getUserData = (): Observable<IUser> => this.userData$.asObservable();
+  public resetUserData = () => this.userData$.next(new User());
+}
+
+```
+let's explain our clear service, we have a `BehaviorSubject` observable which will load the data for the form component or any component again! 😎
+and some utils for getting, set, and reset, actually you can remove get and set, by making the observable public and make your component pointer directly to that observable. I'll keep it clear. 🌚
+ 
+let's move to our component, you will notice no modules or dependencies required for the process except our state service. and we will try to make our form contains different possible data types: `string`, `number` and `boolean`.
+
+`observable-form.component.ts`
+
+```typescript
+import {Observable} from 'rxjs';
+import {StateService} from '../state.service';
+
+export class ObservableFormComponent implements OnInit {
+  userData$: Observable<IUser>;
+
+  ngOnInit(): void {
+    this.userData$ = this.stateService.getUserData();
+  }
+
+  onSubmit= () => {
+    let data: any; 
+    this.userData$.subscribe(user => data = user);
+    console.log(data);
+  }
+
+  onReset= () => this.stateService.resetUserData();
+
+  constructor(private stateService: StateService) { }
+}
+```
+
+that's it! let's explain. what we have:
+
+- `userData$` the component observable which will listen to the `BehaviorSubject` we initialized at state service for use in our component HTML and Typescript.
+
+- `onReset`: the utility responsible for reset data, maybe after the submit and getting `Ok` response from the `API`, or whatever!
+
+- `onSubmit`: again the place we collect the data (current observable value), you can use any Rxjs technique to fetch and again you can make the  `BehaviorSubject` public and another option will be available to get the current data or make third util at service: 
+
+```typescript
+const data = this.stateService.userData$.value;
+// or in service
+public getCurrentUserData = (): IUser => this.userData$.value;
+```
+we will go with the current approach for now, and finally, the time to link all that we made by the view, in fact, we didn't make huge thing it simple, and you will find it simplest when usually use it.
+
+`observable-form.component.html`: 
+Note: we will add examples of control just the shoot you say Ahaa!, you will find the complete example at Github repo.
+
+```html
+<div *ngIf="(userData$ | async) && userData$ | async as user">
+  <input [(ngModel)]="user.name" type="text">
+  <input [(ngModel)]="user.active" type="checkbox">
+  <button (click)="onSubmit()">Save</button>
+  <button (click)="onReset()">Reset</button>
+</div>
+```
+that's it, we are done now let your controls working with Rxjs and angular two data binding, you can catch a fresh copy of data instantly at HTML or your logic code, for example, you can bind HTML elements properties on your observable value, Yeah! 👻 
+
+```html
+<button [class]="user.age && user.age < 18 ? 'cursor-not-allowed': 'cursor-pointer'" (click)="onSubmit()">Save</button>
+```
+![GIF](https://media.giphy.com/media/S9nxk7qDUx2YfM3cVC/giphy.gif)
+
+#another HINT 🎙️
+
+as debugging you can do kind of this to catch whole picture and the power of what you made: 
+
+```html
+<p>Form Data</p>
+<pre>{{ userData$ | async | json }}</pre>
+```
+![debugging](https://dev-to-uploads.s3.amazonaws.com/i/4agkycrpwjqcwsz15okf.gif)
+
+#Concolusion 🖐️
+
+we discussed forms tips for angular development by using built-in frameworks tools, Rxjs, and Data binding. in a short straight forward way, **BUT** this approach not Exclusive at angular think about it Rxjs is an isolated package that you can use and the second part is a data binding (Two way for making controls instantly update the observable) is a behavior that another framework can offer like `VueJs` in `v-model` directive. 
+thought sharing is welcomed since all of that post is just a personal point of view through daily experience.
+
+[Github Repo](https://github.com/muhammedMoussa/angular-forms-tips)
+[Live Demo](https://angular-forms-tips.netlify.app/)
+[Find Me on Twitter](https://twitter.com/muhammedmoussa)

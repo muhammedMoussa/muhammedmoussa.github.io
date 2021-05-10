@@ -23,10 +23,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     // Create blog post pages.
     const posts = result.data.allMdx.edges
-
+    console.log(posts.length, '----------------------------')
     posts.forEach(({ node }, index) => {
-        debugger
-        console.log('ddddddddddddddddd',node)
         if(node.slug) {
             createPage({
                 path: `blog/${node.slug}`,

@@ -1,0 +1,259 @@
+---
+title: Clean up your HTML with ES6 Modules
+date: 2021-04-25
+published: true
+---
+
+
+if you are that person who is working with the web regardless of the role how you doing it, maybe for your WordPress site, a simple static website or you are a backend or full-stack developer and working with Javascript inside HTML files with code in <sctipt> tags, so this post for you.
+
+Modularity is one of the main factors of any solid software to make it more efficient, reusable, and maintainable. if you are coming from any programming language you probably know about modules or classes sharing ways `import`, `module`, `use`, `#include` etc. 
+
+But when it comes to JavaScript this language that written inside a `<script>` tag in HTML file bunch of people thinking about just doing the job making some animation or add a third-party plugin to the website with zero modularity consideration and crowdy HTML files, so let's get started! :fire:
+
+![GIF](https://media.giphy.com/media/3o7TKUM3IgJBX2as9O/giphy.gif)
+
+# How HTML file looks
+```html
+<body>
+    <script>
+        // function doAnimationForMe() {}
+        // function doScrollToTopForMe()
+    </script>
+    <script>
+        // function doFirebaseIntegrationForMe() {}
+        // function danceWithMe()
+    </script>
+</body>
+```
+let's focus on `<body>` content only, and imaging `DRY` some of these little functions on multiple `HTML` files and think about `HTML` file length one last imaging if you want to update something or doing another dance so yeah here we go and will work through all `HTML` pages again over and over.
+
+![GIF](https://media.giphy.com/media/VwwKdq5NV0nwQ/giphy.gif)
+
+# Creating Javascript module
+
+Yes, that's possible, js will not fight you, with newly introduced `ES6` keywords `import` and `export` you can encapsulate the module. regardless of the other benefits of working with modules. so now we are just focused on making the `HTML` file more cleaner.
+
+As example lets grap `doAnimationForMe()` from the `HTML` file, and create `animation.js`
+
+```javascript
+const time = 1000
+
+function start() { /* ..... */ }
+
+function end() { /* ..... */ }
+
+function doAnimationForMe() { 
+  start()
+  setTimeOut(function() {
+    end();
+  }, time)
+}
+``` 
+same code from the `HTML` file but in an isolated, manipulated, and reusable zone.
+
+![GIF](https://media.giphy.com/media/3o6UBhjHobLFgEmrJu/giphy.gif)
+
+
+# Modules Export and Import 
+Great its a time to making our pretty code modular ready. there are variant ways of `export`, `default`, `named`, and `aggregation`. let's find out. another feature of the module if we planning to use this `doAnimationForMe()` at another js files or only include this module to the `HTML` page that we can export all functions in the file or just `doAnimationForMe()` function only. 
+
+- let's start with the **Named** export
+
+```javascript
+export const time = 1000
+
+export function start() { /* ..... */ }
+
+export function end() { /* ..... */ }
+
+export function doAnimationForMe() { 
+  start()
+  setTimeOut(function() {
+    end()
+  }, time)
+}
+``` 
+
+in this way all animation staff exported can be imported later. another tip if you plan to export multiple stuff from one module,
+
+```javascript
+const time = 100
+
+function start() { /* ..... */ }
+
+function end() { /* ..... */ }
+
+function doAnimationForMe() { 
+  start()
+  setTimeOut(function() {
+    end()
+  }, time)
+}
+
+export {start, end, doAnimationForMe}
+// shorthand for {start: start, end: end, doAnimationForMe}
+```
+also can export only `doAnimationForMe()` function and make the module more logical, just flag desired part by `export` or follow the export object tip.
+
+```javacript
+// Code......
+export {doAnimationForMe}
+``` 
+Another *tip*: since we are talking about the named `export` we can also cast names, till now if we will `import` `doAnimationForMe` we have to use the same name `doAnimationForMe` or will cause an error. for rename exported part: 
+
+```javascript
+export {doAnimationForMe as useAnimation}
+``` 
+let's create another pseudo module sample that gets data from API then applying some animation, for the whole picture drawing, creating an `api.js` file.
+
+```javascript
+const url = '/api/item'
+
+export function getAllItems() {
+  return new Promise(function (resolve, reject) {
+    fetch(url)
+      .then(function (response) {
+        resolve(response)
+      })
+      .catch(function (error) {
+        reject(error)
+      })
+  })
+}
+```
+# Module import and reuse
+Yeah, let's have some fun and put it all together creating an `app.js` file. 
+
+```javascript
+import {doAnimationForMe} from './animation.js' // The relative path.
+import {getAllItems} from './api.js' // The relative path.
+
+// Another Code...
+function renderUi(items) {
+  // Render items in the ui
+}
+
+function handleError(err) {
+  // Handle the error
+  console.error(err)
+}
+
+getAllItems().then(function(data) {
+  renderUi(data)
+  doAnimationForMe()
+}).catch(function(err) {
+  handleError(err)
+})
+
+window.addEventListener('load', getAllItems())
+```
+# Adding Module into `HTML` page
+it's the time to cleanup the `HTML` file and include only our encapsulated module, with only one line consider relative paths also :
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Code... -->
+</head>
+<body>
+    <!-- Code... -->
+    <script src="./app.js"></script>
+</body>
+</html>
+```
+The difference is clear now how clean it our `HTML` but, for the first time properly you will get a nice error!
+
+``` 
+Uncaught SyntaxError: Cannot use import statement outside a module
+```
+
+![GIF](https://media.giphy.com/media/3o751YNpKVoKx24UYU/giphy.gif)
+
+Actually no. it's the trick not kidding but we have to include one last attribute to our `script` tag which is the `type="module"`
+
+so after a little update, the code will look like this:
+```html
+<script src="./app.js" type="module"></script>
+```
+the error will go and now we can confirm that our modules all loaded into the `HTML` page by checking the network tab: 
+
+
+![Network tab image](https://i.imgur.com/HAS5J40.png)
+
+> for further reading and it's very important also to check the browser compatibility for this feature with your project or the client devices.
+[JavaScript Modules -MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+
+- another way to doing the same job is  **default export**
+there is no much difference but just in case you don't care about names and want to `export` some functionality from the module without a specific name in `import`, it also's good to avoid naming errors. let's see the same example but in **default export**.
+
+`animation.js`
+
+```javascript
+const time = 1000
+
+function start() { /* ..... */ }
+
+function end() { /* ..... */ }
+
+export default function doAnimationForMe() { 
+  start()
+  setTimeOut(function() {
+    end()
+  }, time)
+}
+``` 
+
+`api.js`
+
+```javascript
+const url = '/api/item'
+
+function getAllItems() {
+  return new Promise(function (resolve, reject) {
+    fetch(url)
+      .then(function (response) {
+        resolve(response)
+      })
+      .catch(function (error) {
+        reject(error)
+      })
+  })
+}
+
+export default getAllItems
+// same but, in another way...
+```
+the most interesting part here at `import` in `app.js`:
+
+```javascript
+import doAnimation from './animation.js'
+import kofta from './api.js'
+
+// Another Code...
+function renderUi(items) {
+  // Render items in the ui
+}
+
+function handleError(err) {
+  // Handle the error
+  console.error(err)
+}
+
+kofta().then(function(data) {
+  renderUi(data)
+  doAnimation()
+}).catch(function(err) {
+  handleError(err)
+})
+
+window.addEventListener('load', getAllItems())
+```
+that's will do the same job but in a simplified way.
+
+![GIF](https://media.giphy.com/media/LlEc7uMgbIiECNK4ce/giphy.gif)
+
+## Consolusion
+The goal of this post is to simplify working with modules also encouraging you to write clean `HTML` pages focused only on markup, and keep `JavaScript` files isolated too like `CSS` with the benefit of modularity at the functionality code on your website. `ES6` `import` and `export` also have a bunch of tips and tricks that's can make life easier also the third way mentioned before `aggregation` export. I just mentioned some basics.
+

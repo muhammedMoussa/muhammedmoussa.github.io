@@ -48,6 +48,11 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
       },
+      gatsbyRemarkPlugins: [
+        {
+          resolve: `gatsby-remark-highlight-code`,
+        },
+      ],
     },
     {
       resolve: "gatsby-source-filesystem",

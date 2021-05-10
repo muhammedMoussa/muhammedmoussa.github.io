@@ -4,6 +4,8 @@ import React from "react"
 import Layout from "../components/layout"
 import { Disqus, CommentCount } from "gatsby-plugin-disqus"
 import Head from "../components/head"
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
+deckDeckGoHighlightElement();
 
 export const query = graphql`
   query PostsByID($id: String!) {
@@ -27,9 +29,9 @@ export default ({ data }) => {
     <Layout>
       <Head title={frontmatter.title} />
       <CommentCount config={disqusConfig} placeholder={" "} />
-      <h1>{frontmatter.title}</h1>
-
-      <p>{frontmatter.date}</p>
+      <h1 className="postTitle">{frontmatter.title}</h1>
+      <p className="postDate">{frontmatter.date}</p>
+      <hr className="mb-4"/>
       <MDXRenderer>{body}</MDXRenderer>
       <Disqus config={disqusConfig} />
     </Layout>

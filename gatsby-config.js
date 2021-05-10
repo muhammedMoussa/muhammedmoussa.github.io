@@ -37,7 +37,7 @@ module.exports = {
         url: "https://bitbucket.org/muhammedmoussa/",
       },
     ],
-    version: "2.0.4",
+    version: "2.1.4",
   },
   plugins: [
     "gatsby-plugin-sass",

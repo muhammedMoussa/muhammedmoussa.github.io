@@ -3,11 +3,16 @@ module.exports = {
     pathPrefix: "/muhammedmoussa.github.io",
     title: "Muhammed Moussa",
     author: "Muhammed Moussa",
-    intro: "Hello, I'm Muhammed. Frontend Engineer.",
+    intro: "Hello, I'm Muhammed. Frontend Enthusiasm.",
     quote:
-      "I'm not a great programmer; I'm just a good programmer with great habits; clean, solid, and tested code.",
-    summary:
-      "A thorough few years of expertise worked in various industries like Saas, Booking, Event Planning, ERP, and Social platforms. with a passion for delivering high-quality software throw requirements to end-user. Regardless of the technology/framework limitation and the platform (Web, Mobile, or PWA).",
+      // "I'm not a great programmer; I'm just a good programmer with great habits; clean, solid, and tested code.",
+      `"Talk is cheap, show me the output.."`,
+    summary: `
+      Hello, I'm Muhammed. Frontend Enthusiasm.
+      I'm not a great programmer; I'm just a good programmer with great habits; clean, solid, and testable code.
+      A thorough few years of expertise worked in various industries like Fintech, Saas, Booking, Event Planning, ERP, and Social platforms. with a passion for delivering high-quality software throw requirements to end-user. also helped the organizations to grow or expand their success. Regardless of the technology/framework limitation and the platform (Web, Mobile, or PWA).
+    `,
+    // "A thorough few years of expertise worked in various industries like Saas, Booking, Event Planning, ERP, and Social platforms. with a passion for delivering high-quality software throw requirements to end-user. Regardless of the technology/framework limitation and the platform (Web, Mobile, or PWA).",
     social: [
       {
         icon: "fab fa-linkedin",
@@ -36,8 +41,12 @@ module.exports = {
         icon: "fab fa-bitbucket",
         url: "https://bitbucket.org/muhammedmoussa/",
       },
+      {
+        icon: "fab fa-instagram",
+        url: "https://www.instagram.com/muhammedmoussaa",
+      },
     ],
-    version: "2.1.4",
+    version: "2.1.5",
   },
   plugins: [
     "gatsby-plugin-sass",

@@ -20,6 +20,9 @@ const Header = () => {
           <li>
             <Link to="/gallery" className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem}>Gallery</Link>
           </li>
+          <li>
+            <Link to="/resume" className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem}>Resume</Link>
+          </li>
           <li className="toggle-input">
             <ThemeToggler>
             {({ theme, toggleTheme }) => (

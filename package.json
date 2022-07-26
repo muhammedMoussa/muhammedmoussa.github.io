@@ -34,7 +34,7 @@
     "gatsby-transformer-remark": "4.3.0-next.0",
     "gatsby-transformer-sharp": "^4.18.1",
     "ink": "^2.7.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1"

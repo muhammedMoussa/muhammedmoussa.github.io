@@ -19,6 +19,11 @@
   --pink-900: #702459;
   --pink-1000: #32031f;
 
+  --yellow-300:  #fde047;
+  --yellow-400:  #facc15;
+  --yellow-500:  #eab308;
+  --yellow-600:  #ca8a04;
+  
   /* Hand-picked personal colors */
   --mine-100: #ffffff;
   --mine-200: #ffffff;
@@ -571,8 +576,8 @@ ul:not(.unstyled-list) ul:not(.unstyled-list) li:last-child {
 }
 
 a {
-  color: #ffffff;
-  color: var(--mine-700);
+  color: #fde047;
+  color: var(--yellow-300);
 }
 
 a:focus {
@@ -585,36 +590,36 @@ a:hover {
 
 @media screen and (color-index: 48) {
   a {
-    color: #4a1b70;
-    color: var(--mine-600);
+    color: #facc15;
+    color: var(--yellow-400);
   }
 }
 
 @media screen and (color: 48842621) {
   a {
-    color: #4a1b70;
-    color: var(--mine-600);
+    color: #facc15;
+    color: var(--yellow-400);
   }
 }
 
 @media screen and (color-index: 48) {
   a {
-    color: #4a1b70;
-    color: var(--mine-600);
+    color: #facc15;
+    color: var(--yellow-400);
   }
 }
 
 @media screen and (color: 48842621) {
   a {
-    color: #4a1b70;
-    color: var(--mine-600);
+    color: #facc15;
+    color: var(--yellow-400);
   }
 }
 
 @media screen and (prefers-color-scheme: dark) {
   a {
-    color: #4a1b70;
-    color: var(--mine-600);
+    color: #facc15;
+    color: var(--yellow-400);
   }
 }
 

@@ -25,7 +25,7 @@ It is another power skill. so across humble experience in software development w
 
 <h3>Showcases</h3>
 
-List of work Combinig the previse keys. Quality, Commitment and Agility.
+List of work combining the previous keys. Quality, Commitment, and Agility.
 
 <ul class="showcases-list">
   <li>Ericsson cognative software. <a href="https://www.ericsson.com/en/portfolio/cloud-software-and-services/cognitive-network--solutions/cognitive-software">🔗</a></li>

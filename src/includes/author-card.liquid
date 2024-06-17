@@ -1,0 +1,35 @@
+{% assign author = authors | where: 'slug', slug | first %}
+<section class="author-card h-card {% if post %}p-author{% endif %} {% if hide %}hidden{% endif %}">
+    <div class="author-picture-container">
+        {% assign imageSrc = author.picture | prepend: "./src/assets/img/" %}
+        {% assign imageAlt = author.name | append: "'s picture."%}
+        {% image imageSrc, imageAlt, "class='author-picture u-photo'" %}
+    </div>
+    <h1 class="h2 author-name">
+        {% comment %} <a href="/" class="p-name u-url">{{ author.name }}</a> {% endcomment %}
+    </h1>
+    <p class="p-note">{{ author.introduction }}</p>
+    <p class="p-note">{{ author.tech_introduction }}</p>
+
+    <br />
+    <div style="margin-bottom: 0;">
+        <a href="https://stackoverflow.com/users/6512565/muhammed-moussa" target="blank">
+        <img 
+            src="https://stackexchange.com/users/flair/8703665.png?theme=dark" 
+            width="208" 
+            height="58" 
+            alt="profile for Muhammed Moussa at Stack Overflow, Q&amp;A for professional and enthusiast programmers" 
+            title="profile for Muhammed Moussa at Stack Overflow, Q&amp;A for professional and enthusiast programmers" />
+        </a>
+    </div> 
+    <div class="author-socials">
+        {% for social in author.socials %}
+        <a
+            href="{{social.link}}"
+            target="_blank"
+            rel="me"
+        >{{ social.label }}</a>
+        {% endfor %}
+    </div>
+    Need a service or want to work with me? <a href="mailto:muhammedmoussa@hotmail.com">reach out.</a>
+</section> 

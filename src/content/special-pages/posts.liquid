@@ -1,0 +1,19 @@
+---
+layout: default
+title: "Articles and random photos."
+pagination:
+  data: collections.primary
+  size: 10
+  alias: posts
+permalink: "/archive/post/primary/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}"
+eleventyComputed:
+  content-description: "Articles and photos by {% getOwnerInfo 'name' %}"
+---
+<section>
+	{% include 'page-title' title:title %}
+	<main>
+		{% for post in posts %}
+			{% include 'post-card' post:post %}
+		{% endfor %}
+	</main>
+</section>

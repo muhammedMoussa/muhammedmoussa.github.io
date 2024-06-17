@@ -1,0 +1,53 @@
+{
+	"title": "Muhammed Moussa",
+	"subtitle": "",
+	"authors": [
+		{
+			"name": "Muhammed Moussa",
+			"slug": "muhammed-moussa",
+			"introduction": "A human developing software. I work at <a href='https://ericsson.com'>Ericsson</a>. I enjoy placidity, running, music and taking long walks or sleeps at the beach.",
+			"tech_introduction": "a frontend software developer thrives in agile environments, leveraging cloud, quality and server-side expertise and a deep interest in WebComponents, JAMstack, and WASM to craft modern web experiences. With hands-on experience across diverse domains like Fintech, ERP, Marketing, Events, and SaaS, to deliver impactful solutions that cater to user needs across industries.",
+			"roles": ["owner"],
+			"website": "/",
+			"socials": [
+				{
+					"slug": "email",
+					"label": "Email",
+					"username": "",
+					"link": "mailto:muhammedmoussa@hotmail"
+				},
+				{
+					"slug": "twitter",
+					"label": "Twitter (X)",
+					"username": "muhammedmoussa",
+					"link": "https://twitter.com/muhammedmoussa"
+				},
+				{
+					"slug": "github",
+					"label": "Github",
+					"username": "muhammedmoussa",
+					"link": "https://github.com/muhammedmoussa"
+				},
+				{
+					"slug": "linkedin",
+					"label": "LinkedIn",
+					"username": "muhammedmoussa",
+					"link": "https://www.linkedin.com/in/muhammedmoussa"
+				},
+				{
+					"slug": "xing",
+					"label": "XING",
+					"username": "muhammedmoussa",
+					"link": "https://www.xing.com/profile/Muhammed_Moussa/cv"
+				},
+				{
+					"slug": "quora",
+					"label": "Quora",
+					"username": "muhammedmoussa",
+					"link": "https://www.quora.com/profile/Muhammed-Moussa-2"
+				}
+			],
+			"picture": "muhammed-moussa.1024x1024.jpg"
+		}
+	]
+}

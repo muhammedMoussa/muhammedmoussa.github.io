@@ -1,0 +1,7 @@
+<footer>
+    <p>Made in EG with AI and <a href="https://www.11ty.dev/">11ty</a> &copy; {% getOwnerInfo 'name' %} <span id="year-span"></span></p>
+</footer>
+
+<script>
+    document.querySelector('#year-span').textContent = new Date().getFullYear();
+</script>

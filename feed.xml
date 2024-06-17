@@ -1,0 +1,156 @@
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Articles, notes, replies, and photos by/from Jane Doe</title>
+    <subtitle>Site description/subtitle</subtitle>
+    <link href="http://localhost:8080/feed.xml" rel="self"/>
+    <link href="http://localhost:8080"/>
+    <id>http://localhost:8080</id>
+    <author>
+        <name>Jane Doe</name>
+        <email>smix@rusingh.com</email>
+    </author>
+    
+    
+    <updated>2024-05-31T08:30:00Z</updated>
+    
+    <entry>
+        
+        <link href="http://localhost:8080/post/photo/2024/pyramids/"/>
+        <updated>2024-05-31T08:30:00Z</updated>
+        <id></id>
+        <content type="html">
+            
+            <![CDATA[
+    
+    <img src="http://localhost:8080/assets/img/pyarmids.jpg" alt="An interesting day -- took my new phone through the paces.">
+    
+    <p>Feeling the weight of history at the Great Pyramids of Giza.</p>
+
+    
+
+
+    <p>Comments are not enabled on my site. I encourage you to get in touch over email by using the following convenience link: <a href="mailto:muhammedmoussa@hotmail.com?subject=Comment on photo.&body=Post link: http://localhost:8080/undefined">comment via email</a>.</p>
+
+
+]]>
+            
+        </content>
+    </entry>
+    
+    <entry>
+        
+        <link href="http://localhost:8080/post/photo/2023/asswan/"/>
+        <updated>2023-02-22T08:30:00Z</updated>
+        <id></id>
+        <content type="html">
+            
+            <![CDATA[
+    
+    <img src="http://localhost:8080/assets/img/asswan.jpg" alt="Feeling like royalty at the Aswan High Dam.">
+    
+    <p>Feeling like royalty at the Aswan High Dam.</p>
+
+    
+
+
+    <p>Comments are not enabled on my site. I encourage you to get in touch over email by using the following convenience link: <a href="mailto:muhammedmoussa@hotmail.com?subject=Comment on photo.&body=Post link: http://localhost:8080/undefined">comment via email</a>.</p>
+
+
+]]>
+            
+        </content>
+    </entry>
+    
+    <entry>
+        
+        <link href="http://localhost:8080/post/note/2022/linkedin-api-python-library-%20copy%202/"/>
+        <updated>2022-06-18T12:30:00Z</updated>
+        <id></id>
+        <content type="html">
+            
+            <![CDATA[
+    <p>LinkedIn API Python Library
+<a href="https://dev.to/muhammedmoussa/linkedin-api-python-library-2ll">Read more here</a></p>
+
+    
+
+
+    <p>Comments are not enabled on my site. I encourage you to get in touch over email by using the following convenience link: <a href="mailto:muhammedmoussa@hotmail.com?subject=Comment on article/note.&body=Post link: http://localhost:8080/undefined">comment via email</a>.</p>
+
+
+]]>
+            
+        </content>
+    </entry>
+    
+    <entry>
+        
+        <link href="http://localhost:8080/post/note/2021/clean-up-your-html-with-eS6-modules/"/>
+        <updated>2021-04-25T12:30:00Z</updated>
+        <id></id>
+        <content type="html">
+            
+            <![CDATA[
+    <p>Clean up your HTML with ES6 Modules
+<a href="https://dev.to/muhammedmoussa/clean-up-your-html-with-es6-modules-4857">Read more here</a></p>
+
+    
+
+
+    <p>Comments are not enabled on my site. I encourage you to get in touch over email by using the following convenience link: <a href="mailto:muhammedmoussa@hotmail.com?subject=Comment on article/note.&body=Post link: http://localhost:8080/undefined">comment via email</a>.</p>
+
+
+]]>
+            
+        </content>
+    </entry>
+    
+    <entry>
+        
+        <link href="http://localhost:8080/post/note/2020/control-angular-forms-in-just-functions/"/>
+        <updated>2020-06-17T12:30:00Z</updated>
+        <id></id>
+        <content type="html">
+            
+            <![CDATA[
+    <p>Control angular forms in just functions 🔥
+<a href="https://dev.to/muhammedmoussa/control-angular-forms-in-just-functions-2k88">Read more here</a></p>
+
+    
+
+
+    <p>Comments are not enabled on my site. I encourage you to get in touch over email by using the following convenience link: <a href="mailto:muhammedmoussa@hotmail.com?subject=Comment on article/note.&body=Post link: http://localhost:8080/undefined">comment via email</a>.</p>
+
+
+]]>
+            
+        </content>
+    </entry>
+    
+    <entry>
+        
+        <link href="http://localhost:8080/post/note/2020/hack-angular-forms-with-rxjs/"/>
+        <updated>2020-06-17T12:30:00Z</updated>
+        <id></id>
+        <content type="html">
+            
+            <![CDATA[
+    <p>Hack Angular Forms With Rxjs 🔥
+<a href="https://dev.to/muhammedmoussa/hack-angular-forms-with-rxjs-4he7">Read more here</a></p>
+
+    
+
+
+    <p>Comments are not enabled on my site. I encourage you to get in touch over email by using the following convenience link: <a href="mailto:muhammedmoussa@hotmail.com?subject=Comment on article/note.&body=Post link: http://localhost:8080/undefined">comment via email</a>.</p>
+
+
+]]>
+            
+        </content>
+    </entry>
+    
+    
+</feed>

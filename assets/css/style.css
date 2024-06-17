@@ -1,0 +1,1940 @@
+@charset "UTF-8";
+
+/* System */
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+
+  /* Primary color - TailwindCSS' pink */
+  /* https://tailwindcss.com/docs/customizing-colors#default-color-palette */
+  --pink-100: #fff5f7;
+  --pink-200: #fed7e2;
+  --pink-300: #fbb6ce;
+  --pink-400: #f687b3;
+  --pink-500: #ed64a6;
+  --pink-600: #d53f8c;
+  --pink-700: #b83280;
+  --pink-800: #97266d;
+  --pink-900: #702459;
+  --pink-1000: #32031f;
+
+  /* Hand-picked personal colors */
+  --mine-100: #ffffff;
+  --mine-200: #ffffff;
+  --mine-300: #ffffff;
+  --mine-400: #ffffff;
+  --mine-500: #ffffff;
+  --mine-600: #4a1b70;
+  --mine-700: #ffffff;
+  --mine-800: #1f0534;
+  --mine-900: #150324;
+
+  /* Grays - TailwindCSS 3.0's neutral gray */
+  /* https://tailwindcss.com/docs/customizing-colors#default-color-palette */
+  --gray-100: #f7fafc;
+  --gray-200: #edf2f7;
+  --gray-300: #e2e8f0;
+  --gray-400: #cbd5e0;
+  --gray-500: #a0aec0;
+  --gray-600: #718096;
+  --gray-700: #4a5568;
+  --gray-800: #2d3748;
+  --gray-900: #1a202c;
+
+  /* ** Typography */
+
+  --sans-fontset: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* As seen on https://systemfontstack.com/ on 2022-02-17. */
+  --serif-fontset: "Iowan Old Style", "Apple Garamond", Baskerville,
+    "Times New Roman", "Droid Serif", Times, "Source Serif Pro", serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  /* As seen on https://systemfontstack.com/ on 2022-02-17. */
+  --mono-fontset: Menlo, Consolas, Monaco, "Liberation Mono", "Lucida Console",
+    monospace;
+
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+
+  /* ** Spacing */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.625rem;
+  --space-sm: 0.875rem;
+  --space-base: 1rem;
+  --space-lg: 1.25rem;
+  --space-xl: 1.5rem;
+  --space-2xl: 1.875rem;
+  --space-3xl: 2rem;
+
+  /* ** Borders */
+  --rounded-sm: 0.125rem;
+  --rounded: 0.25rem;
+  --rounded-lg: 0.5rem;
+  --rounded-full: 9999px;
+
+  /* ** Responsiveness */
+  --multiplier: 1;
+}
+
+/* ** Accessibility */
+
+/* Dark mode */
+
+/* Reduced motion */
+
+/* Responsive breakpoints */
+
+/*
+** Remove this comment and the following imports to get a blank slate.
+*/
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: var(--sans-fontset);
+}
+
+/* Exclusions to margin-bottom. */
+
+a {
+  margin-bottom: 0;
+}
+
+p,
+.p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: var(--sans-fontset);
+  font-size: 1rem;
+  font-size: var(--text-base);
+  font-weight: normal;
+}
+
+@media screen and (color-index: 48) {
+  * {
+    color: #cbd5e0;
+    color: var(--gray-400);
+  }
+}
+
+@media screen and (color: 48842621) {
+  * {
+    color: #cbd5e0;
+    color: var(--gray-400);
+  }
+}
+
+@media screen and (color-index: 48) {
+  * {
+    color: #cbd5e0;
+    color: var(--gray-400);
+  }
+}
+
+@media screen and (color: 48842621) {
+  * {
+    color: #cbd5e0;
+    color: var(--gray-400);
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  * {
+    color: #cbd5e0;
+    color: var(--gray-400);
+  }
+}
+
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+  font-weight: 500;
+  line-height: 1.25;
+  color: #4a5568;
+  color: var(--gray-700);
+  margin-top: 1rem;
+  margin-top: var(--space-base);
+  margin-bottom: 0.25rem;
+  margin-bottom: var(--space-2xs);
+  font-family: "Iowan Old Style", "Apple Garamond", Baskerville,
+    "Times New Roman", "Droid Serif", Times, "Source Serif Pro", serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: var(--serif-fontset);
+}
+
+@media screen and (min-width: 1024px) {
+  h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+    margin-top: 1rem;
+    margin-top: var(--space-base);
+    margin-bottom: 0.25rem;
+    margin-bottom: var(--space-2xs);
+  }
+}
+
+@media screen and (color-index: 48) {
+  h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+    color: #f7fafc;
+    color: var(--gray-100);
+  }
+}
+
+@media screen and (color: 48842621) {
+  h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+    color: #f7fafc;
+    color: var(--gray-100);
+  }
+}
+
+@media screen and (color-index: 48) {
+  h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+    color: #f7fafc;
+    color: var(--gray-100);
+  }
+}
+
+@media screen and (color: 48842621) {
+  h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+    color: #f7fafc;
+    color: var(--gray-100);
+  }
+}
+
+@media screen and (color-index: 48) {
+  h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+    color: #f7fafc;
+    color: var(--gray-100);
+  }
+}
+
+@media screen and (color: 48842621) {
+  h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+    color: #f7fafc;
+    color: var(--gray-100);
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+    color: #f7fafc;
+    color: var(--gray-100);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --multiplier: 1.3;
+  }
+}
+
+h1,.h1 {
+  font-size: calc(1.875rem * 1);
+  font-size: calc(var(--text-3xl) * var(--multiplier));
+}
+
+h2,.h2 {
+  font-size: calc(1.875rem * 1);
+  font-size: calc(var(--text-3xl) * var(--multiplier));
+}
+
+h3,.h3 {
+  font-size: calc(1.5rem * 1);
+  font-size: calc(var(--text-2xl) * var(--multiplier));
+}
+
+h4,.h4 {
+  font-size: calc(1.25rem * 1);
+  font-size: calc(var(--text-xl) * var(--multiplier));
+}
+
+h5,.h5 {
+  font-size: 1.25rem;
+  font-size: var(--text-xl);
+  color: #718096;
+  color: var(--gray-600);
+}
+
+@media screen and (color-index: 48) {
+  h5,.h5 {
+    color: #edf2f7;
+    color: var(--gray-200);
+  }
+}
+
+@media screen and (color: 48842621) {
+  h5,.h5 {
+    color: #edf2f7;
+    color: var(--gray-200);
+  }
+}
+
+@media screen and (color-index: 48) {
+  h5,.h5 {
+    color: #edf2f7;
+    color: var(--gray-200);
+  }
+}
+
+@media screen and (color: 48842621) {
+  h5,.h5 {
+    color: #edf2f7;
+    color: var(--gray-200);
+  }
+}
+
+@media screen and (color-index: 48) {
+  h5,.h5 {
+    color: #edf2f7;
+    color: var(--gray-200);
+  }
+}
+
+@media screen and (color: 48842621) {
+  h5,.h5 {
+    color: #edf2f7;
+    color: var(--gray-200);
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  h5,.h5 {
+    color: #edf2f7;
+    color: var(--gray-200);
+  }
+}
+
+h6,.h6 {
+  font-size: 1.125rem;
+  font-size: var(--text-lg);
+  color: #718096;
+  color: var(--gray-600);
+}
+
+@media screen and (color-index: 48) {
+  h6,.h6 {
+    color: #edf2f7;
+    color: var(--gray-200);
+  }
+}
+
+@media screen and (color: 48842621) {
+  h6,.h6 {
+    color: #edf2f7;
+    color: var(--gray-200);
+  }
+}
+
+@media screen and (color-index: 48) {
+  h6,.h6 {
+    color: #edf2f7;
+    color: var(--gray-200);
+  }
+}
+
+@media screen and (color: 48842621) {
+  h6,.h6 {
+    color: #edf2f7;
+    color: var(--gray-200);
+  }
+}
+
+@media screen and (color-index: 48) {
+  h6,.h6 {
+    color: #edf2f7;
+    color: var(--gray-200);
+  }
+}
+
+@media screen and (color: 48842621) {
+  h6,.h6 {
+    color: #edf2f7;
+    color: var(--gray-200);
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  h6,.h6 {
+    color: #edf2f7;
+    color: var(--gray-200);
+  }
+}
+
+li {
+  margin-bottom: 0.25rem;
+  margin-bottom: var(--space-2xs);
+}
+
+[dir="ltr"] ol:not(.unstyled-list){
+  margin-left: 1.5rem;
+  margin-left: var(--space-xl);
+}
+
+[dir="rtl"] ol:not(.unstyled-list){
+  margin-right: 1.5rem;
+  margin-right: var(--space-xl);
+}
+
+[dir="ltr"] ol:not(.unstyled-list){
+  margin-left: 1.5rem;
+}
+
+[dir="rtl"] ol:not(.unstyled-list){
+  margin-right: 1.5rem;
+}
+
+ol:not(.unstyled-list) {
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+
+[dir="ltr"] ol:not(.unstyled-list) ol:not(.unstyled-list){
+    margin-left: 1.5rem;
+    margin-left: var(--space-xl);
+}
+
+[dir="rtl"] ol:not(.unstyled-list) ol:not(.unstyled-list){
+    margin-right: 1.5rem;
+    margin-right: var(--space-xl);
+}
+
+[dir="ltr"] ol:not(.unstyled-list) ol:not(.unstyled-list){
+    margin-left: 1.5rem;
+}
+
+[dir="rtl"] ol:not(.unstyled-list) ol:not(.unstyled-list){
+    margin-right: 1.5rem;
+}
+
+ol:not(.unstyled-list) ol:not(.unstyled-list) {
+    list-style-type: decimal;
+    margin-bottom: 0;
+  }
+
+ol:not(.unstyled-list) ol:not(.unstyled-list) li {
+      color: #4a5568;
+      color: var(--gray-700);
+    }
+
+ol:not(.unstyled-list) ol:not(.unstyled-list) li:first-child {
+        margin-top: 0.25rem;
+        margin-top: var(--space-2xs);
+      }
+
+ol:not(.unstyled-list) ol:not(.unstyled-list) li:last-child {
+        margin-bottom: 0;
+      }
+
+[dir="ltr"] ul:not(.unstyled-list){
+  margin-left: 1.5rem;
+  margin-left: var(--space-xl);
+}
+
+[dir="rtl"] ul:not(.unstyled-list){
+  margin-right: 1.5rem;
+  margin-right: var(--space-xl);
+}
+
+[dir="ltr"] ul:not(.unstyled-list){
+  margin-left: 1.5rem;
+}
+
+[dir="rtl"] ul:not(.unstyled-list){
+  margin-right: 1.5rem;
+}
+
+ul:not(.unstyled-list) {
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+[dir="ltr"] ul:not(.unstyled-list) ul:not(.unstyled-list){
+    margin-left: 1.5rem;
+    margin-left: var(--space-xl);
+}
+
+[dir="rtl"] ul:not(.unstyled-list) ul:not(.unstyled-list){
+    margin-right: 1.5rem;
+    margin-right: var(--space-xl);
+}
+
+[dir="ltr"] ul:not(.unstyled-list) ul:not(.unstyled-list){
+    margin-left: 1.5rem;
+}
+
+[dir="rtl"] ul:not(.unstyled-list) ul:not(.unstyled-list){
+    margin-right: 1.5rem;
+}
+
+ul:not(.unstyled-list) ul:not(.unstyled-list) {
+    list-style-type: disc;
+    margin-bottom: 0;
+  }
+
+ul:not(.unstyled-list) ul:not(.unstyled-list) li {
+      color: #4a5568;
+      color: var(--gray-700);
+    }
+
+ul:not(.unstyled-list) ul:not(.unstyled-list) li:first-child {
+        margin-block-top: 0.25rem;
+        margin-block-top: var(--space-2xs);
+      }
+
+ul:not(.unstyled-list) ul:not(.unstyled-list) li:last-child {
+        margin-bottom: 0;
+      }
+
+@media screen and (color-index: 48) {
+      ol ol li {
+        color: #f7fafc;
+        color: var(--gray-100);
+      }
+      ul ul li {
+        color: #f7fafc;
+        color: var(--gray-100);
+      }
+}
+
+@media screen and (color: 48842621) {
+      ol ol li {
+        color: #f7fafc;
+        color: var(--gray-100);
+      }
+      ul ul li {
+        color: #f7fafc;
+        color: var(--gray-100);
+      }
+}
+
+@media screen and (color-index: 48) {
+      ol ol li {
+        color: #f7fafc;
+        color: var(--gray-100);
+      }
+      ul ul li {
+        color: #f7fafc;
+        color: var(--gray-100);
+      }
+}
+
+@media screen and (color: 48842621) {
+      ol ol li {
+        color: #f7fafc;
+        color: var(--gray-100);
+      }
+      ul ul li {
+        color: #f7fafc;
+        color: var(--gray-100);
+      }
+}
+
+@media screen and (color-index: 48) {
+      ol ol li {
+        color: #f7fafc;
+        color: var(--gray-100);
+      }
+      ul ul li {
+        color: #f7fafc;
+        color: var(--gray-100);
+      }
+}
+
+@media screen and (color: 48842621) {
+      ol ol li {
+        color: #f7fafc;
+        color: var(--gray-100);
+      }
+      ul ul li {
+        color: #f7fafc;
+        color: var(--gray-100);
+      }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+      ol ol li {
+        color: #f7fafc;
+        color: var(--gray-100);
+      }
+      ul ul li {
+        color: #f7fafc;
+        color: var(--gray-100);
+      }
+}
+
+a {
+  color: #ffffff;
+  color: var(--mine-700);
+}
+
+a:focus {
+    outline-style: solid;
+  }
+
+a:hover {
+    text-decoration-line: underline;
+  }
+
+@media screen and (color-index: 48) {
+  a {
+    color: #4a1b70;
+    color: var(--mine-600);
+  }
+}
+
+@media screen and (color: 48842621) {
+  a {
+    color: #4a1b70;
+    color: var(--mine-600);
+  }
+}
+
+@media screen and (color-index: 48) {
+  a {
+    color: #4a1b70;
+    color: var(--mine-600);
+  }
+}
+
+@media screen and (color: 48842621) {
+  a {
+    color: #4a1b70;
+    color: var(--mine-600);
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  a {
+    color: #4a1b70;
+    color: var(--mine-600);
+  }
+}
+
+hr {
+  border-width: 0;
+  background-color: #2d3748;
+  background-color: var(--gray-800);
+  width: 80%;
+  height: 1px;
+  margin-bottom: 2rem;
+  margin-bottom: var(--space-3xl);
+  margin-top: 2rem;
+  margin-top: var(--space-3xl);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (color-index: 48) {
+  hr {
+    background-color: #1a202c;
+    background-color: var(--gray-900);
+  }
+}
+
+@media screen and (color: 48842621) {
+  hr {
+    background-color: #1a202c;
+    background-color: var(--gray-900);
+  }
+}
+
+@media screen and (color-index: 48) {
+  hr {
+    background-color: #1a202c;
+    background-color: var(--gray-900);
+  }
+}
+
+@media screen and (color: 48842621) {
+  hr {
+    background-color: #1a202c;
+    background-color: var(--gray-900);
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  hr {
+    background-color: #1a202c;
+    background-color: var(--gray-900);
+  }
+}
+
+blockquote {
+  border-left-width: 0.25rem;
+  border-left-style: solid;
+  border-left-color: #4a5568;
+  border-left-color: var(--gray-700);
+  padding-left: 1.25rem;
+  padding-left: var(--space-lg);
+  margin-top: 1rem;
+  margin-top: var(--space-base);
+  margin-bottom: 1.25rem;
+  margin-bottom: var(--space-lg);
+  margin-left: calc(var(--space--xl) * -1);
+}
+
+@media screen and (color-index: 48) {
+  blockquote {
+    border-color: #e2e8f0;
+    border-color: var(--gray-300);
+  }
+}
+
+@media screen and (color: 48842621) {
+  blockquote {
+    border-color: #e2e8f0;
+    border-color: var(--gray-300);
+  }
+}
+
+@media screen and (color-index: 48) {
+  blockquote {
+    border-color: #e2e8f0;
+    border-color: var(--gray-300);
+  }
+}
+
+@media screen and (color: 48842621) {
+  blockquote {
+    border-color: #e2e8f0;
+    border-color: var(--gray-300);
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  blockquote {
+    border-color: #e2e8f0;
+    border-color: var(--gray-300);
+  }
+}
+
+pre {
+  margin-top: calc(0.5rem * 1);
+  margin-top: calc(0.5rem * var(--multiplier));
+  margin-bottom: calc(0.5rem * 1);
+  margin-bottom: calc(0.5rem * var(--multiplier));
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (color-index: 48) {
+  img {
+    opacity: 0.85;
+  }
+
+    img:hover {
+      opacity: 1;
+    }
+}
+
+@media screen and (color: 48842621) {
+  img {
+    opacity: 0.85;
+  }
+
+    img:hover {
+      opacity: 1;
+    }
+}
+
+@media screen and (color-index: 48) {
+  img {
+    opacity: 0.85;
+  }
+
+    img:hover {
+      opacity: 1;
+    }
+}
+
+@media screen and (color: 48842621) {
+  img {
+    opacity: 0.85;
+  }
+
+    img:hover {
+      opacity: 1;
+    }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  img {
+    opacity: 0.85;
+  }
+
+    img:hover {
+      opacity: 1;
+    }
+}
+
+/**
+ * One Light theme for prism.js
+ * Based on Atom's One Light theme: https://github.com/atom/atom/tree/master/packages/one-light-syntax
+ */
+
+/**
+ * One Light colours (accurate as of commit eb064bf on 19 Feb 2021)
+ * From colors.less
+ * --mono-1: hsl(230, 8%, 24%);
+ * --mono-2: hsl(230, 6%, 44%);
+ * --mono-3: hsl(230, 4%, 64%)
+ * --hue-1: hsl(198, 99%, 37%);
+ * --hue-2: hsl(221, 87%, 60%);
+ * --hue-3: hsl(301, 63%, 40%);
+ * --hue-4: hsl(119, 34%, 47%);
+ * --hue-5: hsl(5, 74%, 59%);
+ * --hue-5-2: hsl(344, 84%, 43%);
+ * --hue-6: hsl(35, 99%, 36%);
+ * --hue-6-2: hsl(35, 99%, 40%);
+ * --syntax-fg: hsl(230, 8%, 24%);
+ * --syntax-bg: hsl(230, 1%, 98%);
+ * --syntax-gutter: hsl(230, 1%, 62%);
+ * --syntax-guide: hsla(230, 8%, 24%, 0.2);
+ * --syntax-accent: hsl(230, 100%, 66%);
+ * From syntax-variables.less
+ * --syntax-selection-color: hsl(230, 1%, 90%);
+ * --syntax-gutter-background-color-selected: hsl(230, 1%, 90%);
+ * --syntax-cursor-line: hsla(230, 8%, 24%, 0.05);
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  background: hsl(230, 1%, 98%);
+  color: hsl(230, 8%, 24%);
+  font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono",
+    monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Selection */
+
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] *::-moz-selection,
+pre[class*="language-"] *::-moz-selection {
+  background: hsl(230, 1%, 90%);
+  color: inherit;
+}
+
+code[class*="language-"]::-moz-selection, code[class*="language-"] *::-moz-selection, pre[class*="language-"] *::-moz-selection {
+  background: hsl(230, 1%, 90%);
+  color: inherit;
+}
+
+code[class*="language-"]::selection,
+code[class*="language-"] *::selection,
+pre[class*="language-"] *::selection {
+  background: hsl(230, 1%, 90%);
+  color: inherit;
+}
+
+/* Code blocks */
+
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+/* Inline code */
+
+:not(pre) > code[class*="language-"] {
+  padding: 0.2em 0.3em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.cdata {
+  color: hsl(230, 4%, 64%);
+}
+
+.token.doctype,
+.token.punctuation,
+.token.entity {
+  color: hsl(230, 8%, 24%);
+}
+
+.token.attr-name,
+.token.class-name,
+.token.boolean,
+.token.constant,
+.token.number,
+.token.atrule {
+  color: hsl(35, 99%, 36%);
+}
+
+.token.keyword {
+  color: hsl(301, 63%, 40%);
+}
+
+.token.property,
+.token.tag,
+.token.symbol,
+.token.deleted,
+.token.important {
+  color: hsl(5, 74%, 59%);
+}
+
+.token.selector,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted,
+.token.regex,
+.token.attr-value,
+.token.attr-value > .token.punctuation {
+  color: hsl(119, 34%, 47%);
+}
+
+.token.variable,
+.token.operator,
+.token.function {
+  color: hsl(221, 87%, 60%);
+}
+
+.token.url {
+  color: hsl(198, 99%, 37%);
+}
+
+/* HTML overrides */
+
+.token.attr-value > .token.punctuation.attr-equals,
+.token.special-attr > .token.attr-value > .token.value.css {
+  color: hsl(230, 8%, 24%);
+}
+
+/* CSS overrides */
+
+.language-css .token.selector {
+  color: hsl(5, 74%, 59%);
+}
+
+.language-css .token.property {
+  color: hsl(230, 8%, 24%);
+}
+
+.language-css .token.function,
+.language-css .token.url > .token.function {
+  color: hsl(198, 99%, 37%);
+}
+
+.language-css .token.url > .token.string.url {
+  color: hsl(119, 34%, 47%);
+}
+
+.language-css .token.important,
+.language-css .token.atrule .token.rule {
+  color: hsl(301, 63%, 40%);
+}
+
+/* JS overrides */
+
+.language-javascript .token.operator {
+  color: hsl(301, 63%, 40%);
+}
+
+.language-javascript
+  .token.template-string
+  > .token.interpolation
+  > .token.interpolation-punctuation.punctuation {
+  color: hsl(344, 84%, 43%);
+}
+
+/* JSON overrides */
+
+.language-json .token.operator {
+  color: hsl(230, 8%, 24%);
+}
+
+.language-json .token.null.keyword {
+  color: hsl(35, 99%, 36%);
+}
+
+/* MD overrides */
+
+.language-markdown .token.url,
+.language-markdown .token.url > .token.operator,
+.language-markdown .token.url-reference.url > .token.string {
+  color: hsl(230, 8%, 24%);
+}
+
+.language-markdown .token.url > .token.content {
+  color: hsl(221, 87%, 60%);
+}
+
+.language-markdown .token.url > .token.url,
+.language-markdown .token.url-reference.url {
+  color: hsl(198, 99%, 37%);
+}
+
+.language-markdown .token.blockquote.punctuation,
+.language-markdown .token.hr.punctuation {
+  color: hsl(230, 4%, 64%);
+  font-style: italic;
+}
+
+.language-markdown .token.code-snippet {
+  color: hsl(119, 34%, 47%);
+}
+
+.language-markdown .token.bold .token.content {
+  color: hsl(35, 99%, 36%);
+}
+
+.language-markdown .token.italic .token.content {
+  color: hsl(301, 63%, 40%);
+}
+
+.language-markdown .token.strike .token.content,
+.language-markdown .token.strike .token.punctuation,
+.language-markdown .token.list.punctuation,
+.language-markdown .token.title.important > .token.punctuation {
+  color: hsl(5, 74%, 59%);
+}
+
+/* General */
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.comment,
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.namespace {
+  opacity: 0.8;
+}
+
+/* Plugin overrides */
+
+/* Selectors should have higher specificity than those in the plugins' default stylesheets */
+
+/* Show Invisibles plugin overrides */
+
+.token.token.tab:not(:empty):before,
+.token.token.cr:before,
+.token.token.lf:before,
+.token.token.space:before {
+  color: hsla(230, 8%, 24%, 0.2);
+}
+
+/* Toolbar plugin overrides */
+
+/* Space out all buttons and move them away from the right edge of the code block */
+
+div.code-toolbar > .toolbar.toolbar > .toolbar-item {
+  margin-right: 0.4em;
+}
+
+/* Styling the buttons */
+
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > button,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > a,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > span {
+  background: hsl(230, 1%, 90%);
+  color: hsl(230, 6%, 44%);
+  padding: 0.1em 0.4em;
+  border-radius: 0.3em;
+}
+
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > button:hover,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > button:focus,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > a:hover,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > a:focus,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > span:hover,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > span:focus {
+  background: hsl(230, 1%, 78%); /* custom: darken(--syntax-bg, 20%) */
+  color: hsl(230, 8%, 24%);
+}
+
+/* Line Highlight plugin overrides */
+
+/* The highlighted line itself */
+
+.line-highlight.line-highlight {
+  background: hsla(230, 8%, 24%, 0.05);
+}
+
+/* Default line numbers in Line Highlight plugin */
+
+.line-highlight.line-highlight:before,
+.line-highlight.line-highlight[data-end]:after {
+  background: hsl(230, 1%, 90%);
+  color: hsl(230, 8%, 24%);
+  padding: 0.1em 0.6em;
+  border-radius: 0.3em;
+  -webkit-box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2); /* same as Toolbar plugin default */
+}
+
+/* Hovering over a linkable line number (in the gutter area) */
+
+/* Requires Line Numbers plugin as well */
+
+pre[id].linkable-line-numbers.linkable-line-numbers
+  span.line-numbers-rows
+  > span:hover:before {
+  background-color: hsla(230, 8%, 24%, 0.05);
+}
+
+/* Line Numbers and Command Line plugins overrides */
+
+/* Line separating gutter from coding area */
+
+.line-numbers.line-numbers .line-numbers-rows,
+.command-line .command-line-prompt {
+  border-right-color: hsla(230, 8%, 24%, 0.2);
+}
+
+/* Stuff in the gutter */
+
+.line-numbers .line-numbers-rows > span:before,
+.command-line .command-line-prompt > span:before {
+  color: hsl(230, 1%, 62%);
+}
+
+/* Match Braces plugin overrides */
+
+/* Note: Outline colour is inherited from the braces */
+
+.rainbow-braces .token.token.punctuation.brace-level-1,
+.rainbow-braces .token.token.punctuation.brace-level-5,
+.rainbow-braces .token.token.punctuation.brace-level-9 {
+  color: hsl(5, 74%, 59%);
+}
+
+.rainbow-braces .token.token.punctuation.brace-level-2,
+.rainbow-braces .token.token.punctuation.brace-level-6,
+.rainbow-braces .token.token.punctuation.brace-level-10 {
+  color: hsl(119, 34%, 47%);
+}
+
+.rainbow-braces .token.token.punctuation.brace-level-3,
+.rainbow-braces .token.token.punctuation.brace-level-7,
+.rainbow-braces .token.token.punctuation.brace-level-11 {
+  color: hsl(221, 87%, 60%);
+}
+
+.rainbow-braces .token.token.punctuation.brace-level-4,
+.rainbow-braces .token.token.punctuation.brace-level-8,
+.rainbow-braces .token.token.punctuation.brace-level-12 {
+  color: hsl(301, 63%, 40%);
+}
+
+/* Diff Highlight plugin overrides */
+
+/* Taken from https://github.com/atom/github/blob/master/styles/variables.less */
+
+pre.diff-highlight > code .token.token.deleted:not(.prefix),
+pre > code.diff-highlight .token.token.deleted:not(.prefix) {
+  background-color: hsla(353, 100%, 66%, 0.15);
+}
+
+pre.diff-highlight > code .token.token.deleted:not(.prefix)::-moz-selection,
+pre.diff-highlight > code .token.token.deleted:not(.prefix) *::-moz-selection,
+pre > code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection,
+pre > code.diff-highlight .token.token.deleted:not(.prefix) *::-moz-selection {
+  background-color: hsla(353, 95%, 66%, 0.25);
+}
+
+pre.diff-highlight > code .token.token.deleted:not(.prefix)::-moz-selection, pre.diff-highlight > code .token.token.deleted:not(.prefix) *::-moz-selection, pre > code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection, pre > code.diff-highlight .token.token.deleted:not(.prefix) *::-moz-selection {
+  background-color: hsla(353, 95%, 66%, 0.25);
+}
+
+pre.diff-highlight > code .token.token.deleted:not(.prefix)::selection,
+pre.diff-highlight > code .token.token.deleted:not(.prefix) *::selection,
+pre > code.diff-highlight .token.token.deleted:not(.prefix)::selection,
+pre > code.diff-highlight .token.token.deleted:not(.prefix) *::selection {
+  background-color: hsla(353, 95%, 66%, 0.25);
+}
+
+pre.diff-highlight > code .token.token.inserted:not(.prefix),
+pre > code.diff-highlight .token.token.inserted:not(.prefix) {
+  background-color: hsla(137, 100%, 55%, 0.15);
+}
+
+pre.diff-highlight > code .token.token.inserted:not(.prefix)::-moz-selection,
+pre.diff-highlight > code .token.token.inserted:not(.prefix) *::-moz-selection,
+pre > code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection,
+pre > code.diff-highlight .token.token.inserted:not(.prefix) *::-moz-selection {
+  background-color: hsla(135, 73%, 55%, 0.25);
+}
+
+pre.diff-highlight > code .token.token.inserted:not(.prefix)::-moz-selection, pre.diff-highlight > code .token.token.inserted:not(.prefix) *::-moz-selection, pre > code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection, pre > code.diff-highlight .token.token.inserted:not(.prefix) *::-moz-selection {
+  background-color: hsla(135, 73%, 55%, 0.25);
+}
+
+pre.diff-highlight > code .token.token.inserted:not(.prefix)::selection,
+pre.diff-highlight > code .token.token.inserted:not(.prefix) *::selection,
+pre > code.diff-highlight .token.token.inserted:not(.prefix)::selection,
+pre > code.diff-highlight .token.token.inserted:not(.prefix) *::selection {
+  background-color: hsla(135, 73%, 55%, 0.25);
+}
+
+/* Previewers plugin overrides */
+
+/* Based on https://github.com/atom-community/atom-ide-datatip/blob/master/styles/atom-ide-datatips.less and https://github.com/atom/atom/blob/master/packages/one-light-ui */
+
+/* Border around popup */
+
+.prism-previewer.prism-previewer:before,
+.prism-previewer-gradient.prism-previewer-gradient div {
+  border-color: hsl(0, 0, 95%);
+}
+
+/* Angle and time should remain as circles and are hence not included */
+
+.prism-previewer-color.prism-previewer-color:before,
+.prism-previewer-gradient.prism-previewer-gradient div,
+.prism-previewer-easing.prism-previewer-easing:before {
+  border-radius: 0.3em;
+}
+
+/* Triangles pointing to the code */
+
+.prism-previewer.prism-previewer:after {
+  border-top-color: hsl(0, 0, 95%);
+}
+
+.prism-previewer-flipped.prism-previewer-flipped.after {
+  border-bottom-color: hsl(0, 0, 95%);
+}
+
+/* Background colour within the popup */
+
+.prism-previewer-angle.prism-previewer-angle:before,
+.prism-previewer-time.prism-previewer-time:before,
+.prism-previewer-easing.prism-previewer-easing {
+  background: hsl(0, 0%, 100%);
+}
+
+/* For angle, this is the positive area (eg. 90deg will display one quadrant in this colour) */
+
+/* For time, this is the alternate colour */
+
+.prism-previewer-angle.prism-previewer-angle circle,
+.prism-previewer-time.prism-previewer-time circle {
+  stroke: hsl(230, 8%, 24%);
+  stroke-opacity: 1;
+}
+
+/* Stroke colours of the handle, direction point, and vector itself */
+
+.prism-previewer-easing.prism-previewer-easing circle,
+.prism-previewer-easing.prism-previewer-easing path,
+.prism-previewer-easing.prism-previewer-easing line {
+  stroke: hsl(230, 8%, 24%);
+}
+
+/* Fill colour of the handle */
+
+.prism-previewer-easing.prism-previewer-easing circle {
+  fill: transparent;
+}
+
+/* Pre blocks */
+
+pre {
+  border-radius: 0.25rem;
+  margin-top: 0.25rem;
+  margin-bottom: 2rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+/* Inline code */
+
+/* WARNING Be careful, this can affect code inside pre blocks */
+
+code {
+  font-family: Menlo, Consolas, Monaco, "Liberation Mono", "Lucida Console",
+    monospace;
+  font-family: var(--mono-fontset);
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-size: var(--text-sm);
+  /* background-color: var(--pink-100); */
+  /* color: var(--pink-700); */
+  vertical-align: middle;
+}
+
+@media screen and (color-index: 48) {
+  code {
+    /* background-color: var(--gray-900); */
+    /* color: var(--pink-300); */
+  }
+}
+
+@media screen and (color: 48842621) {
+  code {
+    /* background-color: var(--gray-900); */
+    /* color: var(--pink-300); */
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  code {
+    /* background-color: var(--gray-900); */
+    /* color: var(--pink-300); */
+  }
+}
+
+/* Code inside pre blocks */
+
+pre > code[class*="language-"] {
+  font-family: Menlo, Consolas, Monaco, "Liberation Mono", "Lucida Console",
+    monospace;
+  font-family: var(--mono-fontset);
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 1rem;
+  font-size: var(--text-base);
+  background-color: inherit;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+pre > code[class*="language-"] * {
+    color: inherit;
+  }
+
+@media screen and (color-index: 48) {
+  pre > code[class*="language-"] {
+    background-color: inherit;
+  }
+    pre > code[class*="language-"] * {
+      color: inherit;
+    }
+}
+
+@media screen and (color: 48842621) {
+  pre > code[class*="language-"] {
+    background-color: inherit;
+  }
+    pre > code[class*="language-"] * {
+      color: inherit;
+    }
+}
+
+@media screen and (color-index: 48) {
+  pre > code[class*="language-"] {
+    background-color: inherit;
+  }
+    pre > code[class*="language-"] * {
+      color: inherit;
+    }
+}
+
+@media screen and (color: 48842621) {
+  pre > code[class*="language-"] {
+    background-color: inherit;
+  }
+    pre > code[class*="language-"] * {
+      color: inherit;
+    }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  pre > code[class*="language-"] {
+    background-color: inherit;
+  }
+    pre > code[class*="language-"] * {
+      color: inherit;
+    }
+}
+
+/* @import "./modules/atkinson-hyperlegible-font.css"; */
+
+html,
+body {
+  height: 100%;
+}
+
+.body-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100%;
+}
+
+.body-holder > header,
+  .body-holder > footer {
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+
+    /* Cosmetic */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+.body-holder > main {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+  }
+
+/* Pre-built components in use. */
+
+.notice {
+  padding-top: 0.625rem;
+  padding-top: var(--space-xs);
+  padding-bottom: 0.625rem;
+  padding-bottom: var(--space-xs);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.notice * {
+    font-size: 1rem;
+    font-size: var(--text-base);
+    margin-top: 0;
+    margin-bottom: 0.625rem;
+    margin-bottom: var(--space-xs);
+  }
+
+.notice--info,
+.notice--warn {
+  position: relative;
+}
+
+.notice--info::before, .notice--warn::before {
+    position: absolute;
+    top: 0.625rem;
+    top: var(--space-xs);
+    left: calc(1.25rem * -1);
+    left: calc(var(--space-lg) * -1);
+  }
+
+.notice--info * {
+    color: rgb(71, 122, 185);
+    color: color(display-p3 0.32544 0.47530 0.70705);
+  }
+
+.notice--info::before {
+    content: "ℹ️";
+  }
+
+.notice--warn * {
+    color: rgb(143, 114, 47);
+    color: color(display-p3 0.54175 0.45315 0.22841);
+  }
+
+.notice--warn::before {
+    content: "⚠️";
+  }
+
+@media screen and (color-index: 48) {
+    .notice--info * {
+      color: rgb(113, 161, 227);
+      color: color(display-p3 0.48497 0.62767 0.87044);
+    }
+    .notice--warn * {
+      color: rgb(184, 153, 84);
+      color: color(display-p3 0.70256 0.60447 0.36735);
+    }
+}
+
+@media screen and (color: 48842621) {
+    .notice--info * {
+      color: rgb(113, 161, 227);
+      color: color(display-p3 0.48497 0.62767 0.87044);
+    }
+    .notice--warn * {
+      color: rgb(184, 153, 84);
+      color: color(display-p3 0.70256 0.60447 0.36735);
+    }
+}
+
+@media screen and (color-index: 48) {
+    .notice--info * {
+      color: rgb(113, 161, 227);
+      color: color(display-p3 0.48497 0.62767 0.87044);
+    }
+    .notice--warn * {
+      color: rgb(184, 153, 84);
+      color: color(display-p3 0.70256 0.60447 0.36735);
+    }
+}
+
+@media screen and (color: 48842621) {
+    .notice--info * {
+      color: rgb(113, 161, 227);
+      color: color(display-p3 0.48497 0.62767 0.87044);
+    }
+    .notice--warn * {
+      color: rgb(184, 153, 84);
+      color: color(display-p3 0.70256 0.60447 0.36735);
+    }
+}
+
+@media screen and (color-index: 48) {
+    .notice--info * {
+      color: rgb(113, 161, 227);
+      color: color(display-p3 0.48497 0.62767 0.87044);
+    }
+    .notice--warn * {
+      color: rgb(184, 153, 84);
+      color: color(display-p3 0.70256 0.60447 0.36735);
+    }
+}
+
+@media screen and (color: 48842621) {
+    .notice--info * {
+      color: rgb(113, 161, 227);
+      color: color(display-p3 0.48497 0.62767 0.87044);
+    }
+    .notice--warn * {
+      color: rgb(184, 153, 84);
+      color: color(display-p3 0.70256 0.60447 0.36735);
+    }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    .notice--info * {
+      color: rgb(113, 161, 227);
+      color: color(display-p3 0.48497 0.62767 0.87044);
+    }
+    .notice--warn * {
+      color: rgb(184, 153, 84);
+      color: color(display-p3 0.70256 0.60447 0.36735);
+    }
+}
+
+.container {
+  max-width: 100%;
+  padding-left: 1.875rem;
+  padding-left: var(--space-2xl);
+  padding-right: 1.875rem;
+  padding-right: var(--space-2xl);
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 41.666667%;
+    margin-left: 20vw;
+    margin-right: auto;
+  }
+}
+
+article.post .post-datetime,
+  article.post .post-tags {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+article.post .post-datetime *, article.post .post-tags * {
+      font-size: 0.875rem;
+      font-size: var(--text-sm);
+    }
+
+article.post .post-tags {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+article.post > header,
+  article.post > main {
+    border-bottom: 1px dashed #e2e8f0;
+    border-bottom: 1px dashed var(--gray-300);
+  }
+
+@media screen and (color-index: 48) {
+    article.post > header,
+    article.post > main {
+      border-bottom: 1px dashed #2d3748;
+      border-bottom: 1px dashed var(--gray-800);
+    }
+}
+
+@media screen and (color: 48842621) {
+    article.post > header,
+    article.post > main {
+      border-bottom: 1px dashed #2d3748;
+      border-bottom: 1px dashed var(--gray-800);
+    }
+}
+
+@media screen and (color-index: 48) {
+    article.post > header,
+    article.post > main {
+      border-bottom: 1px dashed #2d3748;
+      border-bottom: 1px dashed var(--gray-800);
+    }
+}
+
+@media screen and (color: 48842621) {
+    article.post > header,
+    article.post > main {
+      border-bottom: 1px dashed #2d3748;
+      border-bottom: 1px dashed var(--gray-800);
+    }
+}
+
+@media screen and (color-index: 48) {
+    article.post > header,
+    article.post > main {
+      border-bottom: 1px dashed #2d3748;
+      border-bottom: 1px dashed var(--gray-800);
+    }
+}
+
+@media screen and (color: 48842621) {
+    article.post > header,
+    article.post > main {
+      border-bottom: 1px dashed #2d3748;
+      border-bottom: 1px dashed var(--gray-800);
+    }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    article.post > header,
+    article.post > main {
+      border-bottom: 1px dashed #2d3748;
+      border-bottom: 1px dashed var(--gray-800);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .article .post-tags {
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+}
+
+/* When included with an article, we want to distance the author card from the content body. */
+
+article > footer > .author-card {
+  margin-top: 6rem;
+}
+
+.author-picture-container {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 1rem;
+}
+
+.author-picture {
+  border-radius: 9999px;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.author-name {
+  margin-top: 0;
+}
+
+.author-name a {
+    font-size: inherit;
+  }
+
+@media screen and (min-width: 1024px) {
+  .author-name {
+    margin-top: 0;
+  }
+}
+
+.author-socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 5px;
+}
+
+.post-card {
+  margin-top: 0;
+  margin-bottom: 1.875rem;
+  margin-bottom: var(--space-2xl);
+}
+
+.post-card__published-date {
+  font-size: 1rem;
+  font-size: var(--text-base);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.post-card__title {
+  color: inherit;
+  margin-top: 0.625rem;
+  margin-top: var(--space-xs);
+  margin-bottom: 0;
+}
+
+.post-card[data-type^="article"] {
+  position: relative;
+}
+
+.post-card[data-type^="article"]::before {
+    position: absolute;
+    top: 0;
+    left: calc(1.5rem * -1);
+    left: calc(var(--space-xl) * -1);
+    content: "📄";
+  }
+
+@media screen and (min-width: 1024px) {
+    .post-card[data-type^="article"]::before {
+      left: calc(1.25rem * -4);
+      left: calc(var(--space-lg) * -4);
+      content: "📄 Article";
+    }
+}
+
+.post-card[data-type^="note"] {
+  position: relative;
+}
+
+.post-card[data-type^="note"]::before {
+    position: absolute;
+    top: 0;
+    left: calc(1.5rem * -1);
+    left: calc(var(--space-xl) * -1);
+    content: "📔";
+  }
+
+@media screen and (min-width: 1024px) {
+    .post-card[data-type^="note"]::before {
+      left: calc(1.25rem * -4);
+      left: calc(var(--space-lg) * -4);
+      content: "📔 Blog";
+    }
+}
+
+.post-card[data-type^="photo"] {
+  position: relative;
+}
+
+.post-card[data-type^="photo"] .u-photo {
+    margin-top: 1.25rem;
+    margin-top: var(--space-lg);
+    margin-bottom: 0;
+    max-width: 100%;
+  }
+
+.post-card[data-type^="photo"]::before {
+    position: absolute;
+    top: 0;
+    left: calc(1.5rem * -1);
+    left: calc(var(--space-xl) * -1);
+    content: "📷";
+  }
+
+@media screen and (min-width: 1024px) {
+    .post-card[data-type^="photo"] .post-card-photos {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: row;
+          flex-wrap: row;
+      gap: 0.875rem;
+      gap: var(--space-sm);
+      grid-gap: 0.875rem;
+      grid-gap: var(--space-sm);
+    }
+
+    .post-card[data-type^="photo"] .u-photo {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 1 auto;
+              flex: 0 1 auto;
+    }
+
+    .post-card[data-type^="photo"]::before {
+      left: calc(1.25rem * -4);
+      left: calc(var(--space-lg) * -4);
+      content: "📷 Photo";
+    }
+}
+
+.post-card[data-type^="reply"] {
+  position: relative;
+}
+
+.post-card[data-type^="reply"]::before {
+    position: absolute;
+    top: 0;
+    left: calc(1.5rem * -1);
+    left: calc(var(--space-xl) * -1);
+    content: "↪";
+  }
+
+@media screen and (min-width: 1024px) {
+    .post-card[data-type^="reply"]::before {
+      left: calc(1.25rem * -4);
+      left: calc(var(--space-lg) * -4);
+      content: "↪ Reply";
+    }
+}
+
+@media screen and (color-index: 48) {
+  body {
+    background: #000000;
+    background: var(--black);
+  }
+}
+
+@media screen and (color: 48842621) {
+  body {
+    background: #000000;
+    background: var(--black);
+  }
+}
+
+@media screen and (color-index: 48) {
+  body {
+    background: #000000;
+    background: var(--black);
+  }
+}
+
+@media screen and (color: 48842621) {
+  body {
+    background: #000000;
+    background: var(--black);
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    background: #000000;
+    background: var(--black);
+  }
+}
+
+/* Although the universal selector does not have a specificity of its own, source order comes into play and can affect your overrides. To prevent this situation, we tuck this in at the end, acting as a sane default when nothing is specified. */
+
+[dir="ltr"] *{
+  margin-left: 0;
+  margin-right: 0;
+  margin-right: initial;
+}
+
+[dir="rtl"] *{
+  margin-right: 0;
+  margin-left: 0;
+  margin-left: initial;
+}
+
+* {
+  font-size: 1rem;
+  font-size: var(--text-base);
+  color: #2d3748;
+  color: var(--gray-800);
+  line-height: 1.625;
+  margin-top: initial;
+  margin-bottom: 1.25rem;
+  margin-top: 0;
+  margin-top: initial;
+  margin-bottom: var(--space-lg);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media screen and (color-index: 48) {
+  * {
+    color: #cbd5e0;
+    color: var(--gray-400);
+  }
+}
+
+@media screen and (color: 48842621) {
+  * {
+    color: #cbd5e0;
+    color: var(--gray-400);
+  }
+}
+
+@media screen and (color-index: 48) {
+  * {
+    color: #cbd5e0;
+    color: var(--gray-400);
+  }
+}
+
+@media screen and (color: 48842621) {
+  * {
+    color: #cbd5e0;
+    color: var(--gray-400);
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  * {
+    color: #cbd5e0;
+    color: var(--gray-400);
+  }
+}
+
+.showcases-list {
+  list-style-type: none !important;
+  list-style-position: inside !important
+}
+
+.showcases-list {
+  li::before {
+    content: '- ';
+  }
+}

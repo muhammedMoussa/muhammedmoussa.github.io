@@ -30,8 +30,8 @@ List of work combining the previous keys. Quality, Commitment, and Agility.
 <ul class="showcases-list">
   <li>Ericsson cognative software. <a href="https://www.ericsson.com/en/portfolio/cloud-software-and-services/cognitive-network--solutions/cognitive-software">🔗</a></li>
   <li>Paymob checkout <a href="https://paymob.com/en/checkout">🔗</a></li>
-  <li>Paymob node-sdk <a href="https://github.com/PaymobAccept/paymob-node">🔗</a></li>
-  <li>Paymob js-sdk <a href="https://github.com/PaymobAccept/paymob-node">🔗</a></li>
+  <li>paymob-node SDK <a href="https://github.com/PaymobAccept/paymob-node">🔗</a></li>
+  <li>paymob-js SDK <a href="https://github.com/PaymobAccept/paymob-js">🔗</a></li>
   <li>Accflex Cloud ERP <a href="https://cloud.accflex.com/">🔗</a></li>
   <li>Accflex ESS mobile app <a href="https://accflex.com/en/Accounts-programs/ESS--App">🔗</a></li>
   <li>Appgain dashboard <a href="https://dashboard.appgain.io/">🔗</a></li>
